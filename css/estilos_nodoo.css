@@ -20,7 +20,7 @@ img {
 }
 
 .fondo_nav {
-    background-color: #b61042;
+    background-color: #b61042 !important;
     padding: 40px;
 }
 
@@ -111,6 +111,10 @@ footer a:hover {
         margin: 10px auto;
         justify-content: flex-end;
         padding-right: 50px;
+    }
+    ul {
+        justify-content: center;
+        width: 100%;
     }
 }
 
