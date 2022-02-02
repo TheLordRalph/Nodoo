@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo_cabecera {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo_cabecera img {
+    width: 20%;
+}
+
+.fondo_nav {
+    background-color: #b61042 !important;
+    padding: 40px;
+}
+
+.color_letra_nav a {
+    color: white!important;
+    font-size: 25px!important;
+    font-weight: bold!important;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.color_letra_nav svg {
+    color: black;
+    font-weight: bold;
+    margin: 0px 5px;
+    margin-bottom: 3px;
+}
+
+.color_letra_nav a:hover {
+    color: black !important;
+}
+
+@media (min-width: 992px) {
+    ul {
+        justify-content: center;
+        width: 100%;
+    }
+}

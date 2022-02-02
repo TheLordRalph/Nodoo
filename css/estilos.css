@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Heebo', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.logo_cabecera {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo_cabecera img {
+  width: 20%;
+}
+
+.fondo_nav {
+  background-color: #b61042 !important;
+  padding: 40px;
+}
+
+.color_letra_nav a {
+  color: white !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+  cursor: pointer;
+  margin: 0px 10px;
+}
+
+.color_letra_nav svg {
+  color: black;
+  font-weight: bold;
+  margin: 0px 5px;
+  margin-bottom: 3px;
+}
+
+.color_letra_nav a:hover {
+  color: black !important;
+}
+
+@media (min-width: 992px) {
+  ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: #b61042;
+}
+
+.div_footer #div_img,
+.div_footer #div_politica,
+.div_footer #div_datos,
+.div_footer #div_rrss {
+  width: 90%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+#div_rrss svg {
+  margin: 20px;
+  cursor: pointer;
+}
+
+#div_rrss svg:hover {
+  color: #b61042;
+}
+
+@media (min-width: 768px) {
+  .div_footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  #div_img {
+    justify-self: flex-start;
+    width: 40% !important;
+    padding: 20px;
+    text-align: left !important;
+  }
+  #div_politica {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 50% !important;
+    margin: 10px auto !important;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #div_datos {
+    justify-self: flex-end;
+    width: 40% !important;
+    padding: 0px 50px;
+    text-align: left !important;
+  }
+  #div_rrss {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 60% !important;
+    margin: 10px auto;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 50px;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */
