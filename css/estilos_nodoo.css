@@ -54,7 +54,7 @@ img {
 #lista_facturas {
     width: 85%;
     margin: auto;
-    height: 900px;
+    height: 850px;
     margin-bottom: 2%;
     border: solid #b61042 2px;
     overflow-y: scroll;
