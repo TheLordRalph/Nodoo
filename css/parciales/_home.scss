@@ -1,0 +1,50 @@
+.empresa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3% 0;
+    h1 {
+        font-size: 2vw;
+        margin: 0;
+        background-color: $rojo_corporativo;
+        color: white;
+        padding: 1%;
+        margin-right: 2%;
+        border-radius: 5px;
+    }
+    a {
+        svg {
+            width: 5vw;
+            background-color: $rojo_corporativo;
+            color: white;
+            padding: 15%;
+            border-radius: 5px;
+        }
+    }
+}
+
+.secciones {
+    margin: 5% 0;
+    .divSecciones {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .boxplus {
+            background-color: #b61042;
+            color: white;
+        }
+        div {
+            border: 20px solid #b61042;
+            width: 20vw;
+            height: 20vw;
+            border-radius: 5px;
+            color: black;
+            margin: 2% 6%;
+            h1 {
+                font-size: 2vw;
+                text-align: center;
+                margin: 10% 0;
+            }
+        }
+    }
+}
