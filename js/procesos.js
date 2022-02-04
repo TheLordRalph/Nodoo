@@ -12,6 +12,8 @@ function iniciar() {
 
     let h2_crearPedidos = document.createElement("h2");
     h2_crearPedidos.textContent = "CREAR UN PEDIDO";
+    let div_botones = document.createElement("div");
+    div_botones.id = "div_botones_crearPedido";
     let btn_pedidoCompra = document.createElement("button");
     btn_pedidoCompra.id = "pedidoCompra";
     btn_pedidoCompra.textContent = "Pedido Compra";
@@ -24,9 +26,10 @@ function iniciar() {
 
 
     div_crearPedidos.appendChild(h2_crearPedidos);
-    div_crearPedidos.appendChild(btn_pedidoCompra);
-    div_crearPedidos.appendChild(btn_pedidoVenta);
-    div_crearPedidos.appendChild(btn_ventaDirecta);
+    div_crearPedidos.appendChild(div_botones);
+    div_botones.appendChild(btn_pedidoCompra);
+    div_botones.appendChild(btn_pedidoVenta);
+    div_botones.appendChild(btn_ventaDirecta);
 
     //
 

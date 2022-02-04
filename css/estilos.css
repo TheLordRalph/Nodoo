@@ -161,5 +161,25 @@ section div#crear_pedido {
 
 section div#crear_pedido h2 {
   font-weight: bold;
+  text-align: center;
+}
+
+section div#crear_pedido div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+section div#crear_pedido div button {
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  width: 20%;
+  padding: 1%;
+  margin: 1% auto;
 }
 /*# sourceMappingURL=estilos.css.map */

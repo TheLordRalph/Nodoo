@@ -5,8 +5,22 @@ section {
         }
         &#crear_pedido {
             @include estilo_caja;
+            width: 70%;
+            margin: 2% auto;
             h2 {
                 font-weight: bold;
+                text-align: center;
+            }
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                button {
+                    @include estilo_caja_peque;
+                    width: 20%;
+                    padding: 1%;
+                    margin: 1% auto;
+                }
             }
         }
     }

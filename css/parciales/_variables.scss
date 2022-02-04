@@ -2,8 +2,11 @@ $rojo_corporativo: #b61042;
 @mixin estilo_caja {
     border: 10px solid $rojo_corporativo;
     border-radius: 20px;
-    width: 70%;
-    margin: 2% auto;
+}
+
+@mixin estilo_caja_peque {
+    border: 5px solid $rojo_corporativo;
+    border-radius: 5px;
 }
 
 @mixin encabezado_seccion {
