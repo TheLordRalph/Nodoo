@@ -1,1 +1,15 @@
 $rojo_corporativo: #b61042;
+@mixin estilo_caja {
+    border: 10px solid $rojo_corporativo;
+    border-radius: 20px;
+    width: 70%;
+    margin: 2% auto;
+}
+
+@mixin encabezado_seccion {
+    background-color: $rojo_corporativo;
+    color: white;
+    text-align: center;
+    margin: 2% 30%;
+    padding: 20px;
+}

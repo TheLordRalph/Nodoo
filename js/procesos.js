@@ -10,24 +10,25 @@ function iniciar() {
     const div_crearPedidos = document.querySelector("#crear_pedido");
     console.log(div_crearPedidos);
 
-    let h3_crearPedidos = document.createElement("h3");
-    h3_crearPedidos.textContent = "CREAR UN PEDIDO";
-    let div_pedidoCompra = document.createElement("div");
-    div_pedidoCompra.id = "pedidoCompra";
-    let div_pedidoVenta = document.createElement("div");
-    div_pedidoVenta.id = "pedidoVenta";
-    let div_ventaDirecta = document.createElement("div");
-    div_ventaDirecta.id = "ventaDirecta";
+    let h2_crearPedidos = document.createElement("h2");
+    h2_crearPedidos.textContent = "CREAR UN PEDIDO";
+    let btn_pedidoCompra = document.createElement("button");
+    btn_pedidoCompra.id = "pedidoCompra";
+    btn_pedidoCompra.textContent = "Pedido Compra";
+    let btn_pedidoVenta = document.createElement("button");
+    btn_pedidoVenta.id = "pedidoVenta";
+    btn_pedidoVenta.textContent = "Pedido Compra";
+    let btn_ventaDirecta = document.createElement("button");
+    btn_ventaDirecta.id = "ventaDirecta";
+    btn_ventaDirecta.textContent = "Pedido Compra";
 
-    div_crearPedidos.appendChild(h3_crearPedidos);
-    div_crearPedidos.appendChild(div_pedidoCompra);
-    div_crearPedidos.appendChild(div_pedidoVenta);
-    div_crearPedidos.appendChild(div_ventaDirecta);
+
+    div_crearPedidos.appendChild(h2_crearPedidos);
+    div_crearPedidos.appendChild(btn_pedidoCompra);
+    div_crearPedidos.appendChild(btn_pedidoVenta);
+    div_crearPedidos.appendChild(btn_ventaDirecta);
 
     //
-
-
-
 
 
 }

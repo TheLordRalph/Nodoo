@@ -143,4 +143,23 @@ footer a:hover {
     width: 100%;
   }
 }
+
+section div#titular {
+  background-color: #b61042;
+  color: white;
+  text-align: center;
+  margin: 2% 30%;
+  padding: 20px;
+}
+
+section div#crear_pedido {
+  border: 10px solid #b61042;
+  border-radius: 20px;
+  width: 70%;
+  margin: 2% auto;
+}
+
+section div#crear_pedido h2 {
+  font-weight: bold;
+}
 /*# sourceMappingURL=estilos.css.map */

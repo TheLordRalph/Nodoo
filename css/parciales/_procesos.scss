@@ -1,0 +1,13 @@
+section {
+    div {
+        &#titular {
+            @include encabezado_seccion;
+        }
+        &#crear_pedido {
+            @include estilo_caja;
+            h2 {
+                font-weight: bold;
+            }
+        }
+    }
+}
