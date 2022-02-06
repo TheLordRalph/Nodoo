@@ -5,6 +5,7 @@ window.onload = function() {
     }
 };
 
+// PINTAR EL HTML DE LA PAGINA DE PROCESOS 
 function iniciarProcesos() {
 
     //APARTADO CREAR UN PEDIDO 
@@ -121,6 +122,7 @@ function iniciarProcesos() {
     div_gestionPedidos.appendChild(btn_buscar_gestionP);
 }
 
+// CREACION DEL POP-UP DE PROCESOS 
 function PopUp_procesos() {
     let popUp_contenedor = document.createElement("div");
     popUp_contenedor.id = "popUp_contenedor";
@@ -128,8 +130,8 @@ function PopUp_procesos() {
 
     let popUp_titulo = document.createElement("div");
     popUp_titulo.id = "popUp_titulo";
-    let popUp_titulo_h3 = document.createElement("h3");
-    popUp_titulo_h3.textContent = "Selección Clie/Prov";
+    let popUp_titulo_h4 = document.createElement("h4");
+    popUp_titulo_h4.textContent = "Selección Clie/Prov";
 
     let popUp_div_cod = document.createElement("div");
     let popUp_div_cod_h4 = document.createElement("h4");
@@ -160,7 +162,7 @@ function PopUp_procesos() {
     popUp_btn_crearCliente.textContent = "Crear nuevo Clie/Prov"
 
     popUp_contenedor.appendChild(popUp_titulo);
-    popUp_titulo.appendChild(popUp_titulo_h3);
+    popUp_titulo.appendChild(popUp_titulo_h4);
 
     popUp_contenedor.appendChild(popUp_div_cod);
     popUp_div_cod.appendChild(popUp_div_cod_h4);
@@ -184,6 +186,7 @@ function PopUp_procesos() {
     return popUp_contenedor;
 }
 
+//ESCUCHADOR DE EVENTOS DE LA PÁGINA DE PROCESOS 
 window.addEventListener("load", function(event) {
 
     // ESCUCHADOR btn_pedidoCompra

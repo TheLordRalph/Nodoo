@@ -8,24 +8,28 @@
 }
 
 .popUp {
+    @include estilo_caja;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: 10% auto;
-    @include estilo_caja;
     background-color: white;
-    width: 50%;
+    width: 30%;
     text-align: center;
     div {
         @include caja_filtar;
+        justify-content: space-between;
+        input {
+            width: 30%;
+        }
         &#popUp_titulo {
             @include estilo_caja_peque;
             background-color: white;
-            text-align: center;
-            margin: 5% 20%;
+            margin: 5%;
             color: black;
+            justify-content: center;
         }
         &#popUp_div_results {
             text-align: center;
@@ -36,7 +40,7 @@
     button {
         @include estilo_caja_peque;
         padding: 1%;
-        margin: 1% auto;
+        margin: 5% auto;
         background-color: white;
         font-weight: bold;
     }
