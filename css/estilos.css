@@ -144,7 +144,79 @@ footer a:hover {
   }
 }
 
-section div#titular {
+.unselectable {
+  pointer-events: none;
+  background-color: grey;
+  opacity: 50%;
+}
+
+.unselectable #procesos {
+  position: relative;
+}
+
+.popUp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 10% auto;
+  border: 10px solid #b61042;
+  border-radius: 20px;
+  background-color: white;
+  background-color: white;
+  width: 50%;
+  text-align: center;
+}
+
+.popUp div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1%;
+  padding: 2%;
+  color: white;
+  background-color: #b61042;
+}
+
+.popUp div#popUp_titulo {
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  background-color: white;
+  background-color: white;
+  text-align: center;
+  margin: 5% 20%;
+  color: black;
+}
+
+.popUp div#popUp_div_results {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: grey;
+}
+
+.popUp button {
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  background-color: white;
+  padding: 1%;
+  margin: 1% auto;
+  background-color: white;
+  font-weight: bold;
+}
+
+section#cuerpo_procesos {
+  position: relative;
+}
+
+section#menus_procesos div#titular {
   background-color: #b61042;
   color: white;
   text-align: center;
@@ -152,19 +224,20 @@ section div#titular {
   padding: 20px;
 }
 
-section div#crear_pedido {
+section#menus_procesos div#crear_pedido {
   border: 10px solid #b61042;
   border-radius: 20px;
+  background-color: white;
   width: 70%;
-  margin: 2% auto;
+  margin: 5% auto;
 }
 
-section div#crear_pedido h2 {
+section#menus_procesos div#crear_pedido h2 {
   font-weight: bold;
   text-align: center;
 }
 
-section div#crear_pedido div {
+section#menus_procesos div#crear_pedido div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,11 +248,95 @@ section div#crear_pedido div {
           justify-content: space-evenly;
 }
 
-section div#crear_pedido div button {
+section#menus_procesos div#crear_pedido div button {
   border: 5px solid #b61042;
   border-radius: 5px;
+  background-color: white;
   width: 20%;
   padding: 1%;
   margin: 1% auto;
+  font-weight: bold;
+}
+
+section#menus_procesos div#gestion_pedido {
+  border: 10px solid #b61042;
+  border-radius: 20px;
+  background-color: white;
+  width: 70%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+section#menus_procesos div#gestion_pedido h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+section#menus_procesos div#gestion_pedido div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section#menus_procesos div#gestion_pedido div div {
+  width: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1%;
+  padding: 2%;
+  color: white;
+  background-color: #b61042;
+}
+
+section#menus_procesos div#gestion_pedido div div input {
+  width: 20%;
+}
+
+section#menus_procesos div#gestion_pedido div#filtro_tipo_pedido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1%;
+  padding: 2%;
+  color: white;
+  background-color: #b61042;
+  margin: 1% auto;
+  width: 48%;
+}
+
+section#menus_procesos div#gestion_pedido div#filtro_tipo_pedido input {
+  width: 20%;
+}
+
+section#menus_procesos div#gestion_pedido div#results_gestionP {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2%;
+  background-color: grey;
+  color: white;
+}
+
+section#menus_procesos div#gestion_pedido button {
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  background-color: white;
+  width: 20%;
+  padding: 1%;
+  margin: 1% auto;
+  font-weight: bold;
 }
 /*# sourceMappingURL=estilos.css.map */

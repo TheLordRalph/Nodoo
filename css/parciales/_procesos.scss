@@ -1,25 +1,117 @@
-section {
+.unselectable {
+    pointer-events: none;
+    background-color: grey;
+    opacity: 50%;
+    #procesos {
+        position: relative;
+    }
+}
+
+.popUp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 10% auto;
+    @include estilo_caja;
+    background-color: white;
+    width: 50%;
+    text-align: center;
     div {
-        &#titular {
-            @include encabezado_seccion;
+        @include caja_filtar;
+        &#popUp_titulo {
+            @include estilo_caja_peque;
+            background-color: white;
+            text-align: center;
+            margin: 5% 20%;
+            color: black;
         }
-        &#crear_pedido {
-            @include estilo_caja;
-            width: 70%;
-            margin: 2% auto;
-            h2 {
-                font-weight: bold;
-                text-align: center;
+        &#popUp_div_results {
+            text-align: center;
+            justify-content: center;
+            background-color: grey;
+        }
+    }
+    button {
+        @include estilo_caja_peque;
+        padding: 1%;
+        margin: 1% auto;
+        background-color: white;
+        font-weight: bold;
+    }
+}
+
+section {
+    &#cuerpo_procesos {
+        position: relative;
+    }
+    &#menus_procesos {
+        div {
+            &#titular {
+                @include encabezado_seccion;
             }
-            div {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
+            &#crear_pedido {
+                @include estilo_caja;
+                width: 70%;
+                margin: 5% auto;
+                h2 {
+                    font-weight: bold;
+                    text-align: center;
+                }
+                div {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    button {
+                        @include estilo_caja_peque;
+                        width: 20%;
+                        padding: 1%;
+                        margin: 1% auto;
+                        font-weight: bold;
+                    }
+                }
+            }
+            &#gestion_pedido {
+                @include estilo_caja;
+                width: 70%;
+                margin: 5% auto;
+                text-align: center;
+                h2 {
+                    font-weight: bold;
+                    text-align: center;
+                }
+                div {
+                    display: flex;
+                    flex-wrap: wrap;
+                    div {
+                        width: 48%;
+                        @include caja_filtar;
+                        input {
+                            width: 20%;
+                        }
+                    }
+                    &#filtro_tipo_pedido {
+                        @include caja_filtar;
+                        margin: 1% auto;
+                        width: 48%;
+                        input {
+                            width: 20%;
+                        }
+                    }
+                    &#results_gestionP {
+                        justify-content: center;
+                        padding: 2%;
+                        background-color: grey;
+                        color: white;
+                    }
+                }
                 button {
                     @include estilo_caja_peque;
                     width: 20%;
                     padding: 1%;
                     margin: 1% auto;
+                    font-weight: bold;
                 }
             }
         }
