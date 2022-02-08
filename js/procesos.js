@@ -9,6 +9,7 @@ window.onload = function() {
 function iniciarProcesos() {
 
     //APARTADO CREAR UN PEDIDO 
+    const section_menus = document.querySelector("#menus_procesos");
     const div_crearPedidos = document.querySelector("#crear_pedido");
     console.log(div_crearPedidos);
 
@@ -16,17 +17,48 @@ function iniciarProcesos() {
     h2_crearPedidos.textContent = "CREAR UN PEDIDO";
     let div_botones = document.createElement("div");
     div_botones.id = "div_botones_crearPedido";
+    //btn_pedidoCompra
     let btn_pedidoCompra = document.createElement("button");
     btn_pedidoCompra.id = "btn_pedidoCompra";
     btn_pedidoCompra.textContent = "Pedido Compra";
+    if (btn_pedidoCompra) {
+        btn_pedidoCompra.addEventListener("click", function() {
+
+            section_menus.classList.add("unselectable");
+            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
+            console.log("fin del eventListener");
+        });
+    }
+
+    //btn_pedidoVenta
     let btn_pedidoVenta = document.createElement("button");
     btn_pedidoVenta.id = "btn_pedidoVenta";
     btn_pedidoVenta.textContent = "Pedido Venta";
+    if (btn_pedidoVenta) {
+        btn_pedidoVenta.addEventListener("click", function() {
+
+            section_menus.classList.add("unselectable");
+            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
+            console.log("fin del eventListener");
+        });
+    }
+
+    //btn_ventaDirecta
     let btn_ventaDirecta = document.createElement("button");
     btn_ventaDirecta.id = "btn_ventaDirecta";
     btn_ventaDirecta.textContent = "Venta Directa";
+    if (btn_ventaDirecta) {
+        btn_ventaDirecta.addEventListener("click", function() {
+
+            section_menus.classList.add("unselectable");
+            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
+            console.log("fin del eventListener");
 
 
+        });
+    }
+
+    //appendChilds crearPedidos
     div_crearPedidos.appendChild(h2_crearPedidos);
     div_crearPedidos.appendChild(div_botones);
     div_botones.appendChild(btn_pedidoCompra);
@@ -123,16 +155,28 @@ function iniciarProcesos() {
 }
 
 // CREACION DEL POP-UP DE PROCESOS 
-function PopUp_procesos() {
+function PopUp_procesos(section_menus) {
     let popUp_contenedor = document.createElement("div");
     popUp_contenedor.id = "popUp_contenedor";
     popUp_contenedor.classList.add("popUp");
 
+    //titulo
     let popUp_titulo = document.createElement("div");
     popUp_titulo.id = "popUp_titulo";
     let popUp_titulo_h4 = document.createElement("h4");
     popUp_titulo_h4.textContent = "Selección Clie/Prov";
 
+    //volver atrás
+    let img_cerrar = document.createElement("img");
+    img_cerrar.id = "img_cerrar_popUp";
+    img_cerrar.src = "images/x_cerrar.svg";
+    img_cerrar.addEventListener("click", function() {
+        section_menus.classList.remove("unselectable");
+        popUp_contenedor.remove();
+        console.log("pulso cerrar.")
+    });
+
+    //inputs para filtrar
     let popUp_div_cod = document.createElement("div");
     let popUp_div_cod_h4 = document.createElement("h4");
     popUp_div_cod_h4.textContent = "Código Clie/Prov :";
@@ -161,6 +205,9 @@ function PopUp_procesos() {
     let popUp_btn_crearCliente = document.createElement("button");
     popUp_btn_crearCliente.textContent = "Crear nuevo Clie/Prov"
 
+
+    popUp_contenedor.appendChild(img_cerrar);
+
     popUp_contenedor.appendChild(popUp_titulo);
     popUp_titulo.appendChild(popUp_titulo_h4);
 
@@ -186,45 +233,4 @@ function PopUp_procesos() {
     return popUp_contenedor;
 }
 
-//ESCUCHADOR DE EVENTOS DE LA PÁGINA DE PROCESOS 
-window.addEventListener("load", function(event) {
-
-    // ESCUCHADOR btn_pedidoCompra
-    // INICIO :
-    const btn_pedidoCompra = this.document.querySelector("#btn_pedidoCompra");
-    const btn_pedidoVenta = this.document.querySelector("#btn_pedidoVenta");
-    const btn_ventaDirecta = this.document.querySelector("#btn_ventaDirecta");
-    const section_menus = this.document.querySelector("#menus_procesos");
-
-    if (btn_pedidoCompra) {
-        btn_pedidoCompra.addEventListener("click", function() {
-
-            section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos());
-            console.log("fin del eventListener");
-        });
-    }
-
-    if (btn_pedidoVenta) {
-        btn_pedidoVenta.addEventListener("click", function() {
-
-            section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos());
-            console.log("fin del eventListener");
-        });
-    }
-
-    if (btn_ventaDirecta) {
-        btn_ventaDirecta.addEventListener("click", function() {
-
-            section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos());
-            console.log("fin del eventListener");
-
-
-        });
-    }
-
-
-
-});
+//ESCUCHADOR DE EVENTOS DE LA PÁGINA DE PROCESOS

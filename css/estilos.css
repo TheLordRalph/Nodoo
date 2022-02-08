@@ -169,20 +169,29 @@ footer a:hover {
   text-align: center;
 }
 
+.popUp img {
+  right: 20%;
+  padding-top: 5%;
+  margin-left: 86%;
+  width: 7%;
+}
+
 .popUp div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 1%;
   padding: 2%;
   color: white;
   background-color: #b61042;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .popUp div input {
@@ -190,9 +199,10 @@ footer a:hover {
 }
 
 .popUp div#popUp_titulo {
+  background-color: white;
   border: 5px solid #b61042;
   border-radius: 5px;
-  background-color: white;
+  font-weight: bold;
   background-color: white;
   margin: 5%;
   color: black;
@@ -210,13 +220,12 @@ footer a:hover {
 }
 
 .popUp button {
+  background-color: white;
   border: 5px solid #b61042;
   border-radius: 5px;
-  background-color: white;
-  padding: 1%;
-  margin: 5% auto;
-  background-color: white;
   font-weight: bold;
+  padding: 2%;
+  margin: 5% auto;
 }
 
 section#cuerpo_procesos {
@@ -256,13 +265,13 @@ section#menus_procesos div#crear_pedido div {
 }
 
 section#menus_procesos div#crear_pedido div button {
+  background-color: white;
   border: 5px solid #b61042;
   border-radius: 5px;
-  background-color: white;
+  font-weight: bold;
   width: 20%;
   padding: 1%;
   margin: 1% auto;
-  font-weight: bold;
 }
 
 section#menus_procesos div#gestion_pedido {
@@ -294,9 +303,9 @@ section#menus_procesos div#gestion_pedido div div {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 1%;
   padding: 2%;
   color: white;
@@ -313,9 +322,9 @@ section#menus_procesos div#gestion_pedido div#filtro_tipo_pedido {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 1%;
   padding: 2%;
   color: white;
@@ -338,12 +347,12 @@ section#menus_procesos div#gestion_pedido div#results_gestionP {
 }
 
 section#menus_procesos div#gestion_pedido button {
+  background-color: white;
   border: 5px solid #b61042;
   border-radius: 5px;
-  background-color: white;
+  font-weight: bold;
   width: 20%;
   padding: 1%;
   margin: 1% auto;
-  font-weight: bold;
 }
 /*# sourceMappingURL=estilos.css.map */

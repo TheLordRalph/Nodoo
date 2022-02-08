@@ -18,6 +18,12 @@
     background-color: white;
     width: 30%;
     text-align: center;
+    img {
+        right: 20%;
+        padding-top: 5%;
+        margin-left: 86%;
+        width: 7%;
+    }
     div {
         @include caja_filtar;
         justify-content: space-between;
@@ -39,10 +45,8 @@
     }
     button {
         @include estilo_caja_peque;
-        padding: 1%;
+        padding: 2%;
         margin: 5% auto;
-        background-color: white;
-        font-weight: bold;
     }
 }
 
@@ -72,7 +76,6 @@ section {
                         width: 20%;
                         padding: 1%;
                         margin: 1% auto;
-                        font-weight: bold;
                     }
                 }
             }
@@ -115,7 +118,6 @@ section {
                     width: 20%;
                     padding: 1%;
                     margin: 1% auto;
-                    font-weight: bold;
                 }
             }
         }
