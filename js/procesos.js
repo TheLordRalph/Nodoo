@@ -27,6 +27,7 @@ function iniciarProcesos() {
             section_menus.classList.add("unselectable");
             section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
             console.log("fin del eventListener");
+            consultaBD(1);
         });
     }
 
@@ -197,11 +198,34 @@ function PopUp_procesos(section_menus) {
 
     let popUp_btn_buscar = document.createElement("button");
     popUp_btn_buscar.textContent = "Buscar";
+    /*
+        popUp_btn_buscar.addEventListener("click", function(
+            let cod_clieProv = popUp_div_cod_input.value;
+            let nombre_clieProv = popUp_div_nombre_input.value;
+            let cif_clieProv = popUp_div_cif_input.value;
 
+            consultaBBDD();
+            /*
+            Crear consulta 
+            
+        ));
+    */
+    //DIV RESULTS
     let popUp_div_results = document.createElement("div");
     popUp_div_results.id = "popUp_div_results";
     let popUp_div_results_h4 = document.createElement("h4");
-    popUp_div_results_h4.textContent = "Resultados..."
+    popUp_div_results_h4.textContent = "Resultados...";
+    //DIV DE CADA CLIENTE DE DIV RESULTS 
+    let popUp_div_results_cliente = document.createElement("div");
+    popUp_div_results_cliente.id = "div_result_cliente";
+    let popUp_results_cliente_cod = document.createElement("h4");
+    //popUp_results_cliente_cod.textContent = //resultado de consulta del codClie. ;
+    let popUp_results_cliente_nombre = document.createElement("h4");
+    //popUp_results_cliente_nombre.textContent = //resultado de consulta del nombre del Cliente. ;
+
+
+
+
     let popUp_btn_crearCliente = document.createElement("button");
     popUp_btn_crearCliente.textContent = "Crear nuevo Clie/Prov"
 
@@ -233,4 +257,35 @@ function PopUp_procesos(section_menus) {
     return popUp_contenedor;
 }
 
-//ESCUCHADOR DE EVENTOS DE LA PÁGINA DE PROCESOS
+//FUNCTION CONSULTA BD
+/*
+function consultaBD(cod_cliente) {
+    var datosRecibidos;
+    cod_cliente = 1;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            datosRecibidos = this.responseText;
+
+            console.log(datosRecibidos);
+
+        }
+    };
+    xhttp.open("GET", "./PHP/filtrar_clientes.php", true);
+    xhttp.send();
+}*/
+
+function consultaBD() {
+    var nombreEmpresa;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            nombreEmpresa = this.responseText;
+            document.getElementById("nombreEmpresa").innerHTML = nombreEmpresa;
+        }
+    };
+    xhttp.open("GET", "./PHP/select.php", true);
+    xhttp.send();
+}
