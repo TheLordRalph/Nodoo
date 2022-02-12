@@ -1,1 +1,31 @@
 $rojo_corporativo: #b61042;
+@mixin estilo_caja {
+    border: 10px solid $rojo_corporativo;
+    border-radius: 20px;
+    background-color: white;
+}
+
+@mixin estilo_caja_peque {
+    border: 5px solid $rojo_corporativo;
+    border-radius: 5px;
+    background-color: white;
+    font-weight: bold;
+}
+
+@mixin encabezado_seccion {
+    background-color: $rojo_corporativo;
+    color: white;
+    text-align: center;
+    margin: 2% 30%;
+    padding: 20px;
+}
+
+@mixin caja_filtar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 2%;
+    color: white;
+    background-color: $rojo_corporativo;
+}

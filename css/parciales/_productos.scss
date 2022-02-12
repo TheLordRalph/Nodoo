@@ -1,0 +1,45 @@
+#titulo_producto {
+    background-color: $rojo_corporativo;
+    color: white;
+    text-align: center;
+    margin: 2% 30%;
+    padding: 20px;
+}
+
+.caja {
+    @include estilo_caja;
+    width: 70%;
+    margin: auto;
+    .crearBuscar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 70%;
+        margin: auto;
+        padding: 2% 0;
+        input {
+            @include estilo_caja_peque;
+            width: 14vw;
+            padding: 1%;
+        }
+    }
+    .filtro_busqueda_producto_1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        color: white;
+        margin: 2% 0;
+        div {
+            width: 40%;
+            display: inline-flex;
+            background-color: $rojo_corporativo;
+            padding: 1%;
+            justify-content: space-evenly;
+        }
+        input {
+            @include estilo_caja_peque;
+            width: 14vw;
+            padding: 1%;
+        }
+    }
+}
