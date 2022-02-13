@@ -24,8 +24,9 @@ function iniciarProcesos() {
     if (btn_pedidoCompra) {
         btn_pedidoCompra.addEventListener("click", function() {
 
+            let tipo_pedido = "compra";
             section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
+            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
             consultaBD(1);
         });
@@ -38,8 +39,9 @@ function iniciarProcesos() {
     if (btn_pedidoVenta) {
         btn_pedidoVenta.addEventListener("click", function() {
 
+            let tipo_pedido = "venta";
             section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
+            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
         });
     }
@@ -51,8 +53,10 @@ function iniciarProcesos() {
     if (btn_ventaDirecta) {
         btn_ventaDirecta.addEventListener("click", function() {
 
+            let tipo_pedido = "ventaDirecta";
+
             section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus));
+            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
 
 
@@ -153,10 +157,14 @@ function iniciarProcesos() {
     div_gestionPedidos.appendChild(div3_gestionP);
     div_gestionPedidos.appendChild(div_results_gestionP);
     div_gestionPedidos.appendChild(btn_buscar_gestionP);
+
 }
 
 // CREACION DEL POP-UP DE PROCESOS 
-function PopUp_procesos(section_menus) {
+function PopUp_procesos(section_menus, tipo_pedido) {
+
+
+
     let popUp_contenedor = document.createElement("div");
     popUp_contenedor.id = "popUp_contenedor";
     popUp_contenedor.classList.add("popUp");
@@ -198,18 +206,18 @@ function PopUp_procesos(section_menus) {
 
     let popUp_btn_buscar = document.createElement("button");
     popUp_btn_buscar.textContent = "Buscar";
-    /*
-        popUp_btn_buscar.addEventListener("click", function(
-            let cod_clieProv = popUp_div_cod_input.value;
-            let nombre_clieProv = popUp_div_nombre_input.value;
-            let cif_clieProv = popUp_div_cif_input.value;
 
-            consultaBBDD();
-            /*
-            Crear consulta 
-            
-        ));
-    */
+
+    popUp_btn_buscar.addEventListener("click", function() {
+        //   let cod_clieProv = popUp_div_cod_input.value;
+        //   let nombre_clieProv = popUp_div_nombre_input.value;
+        //   let cif_clieProv = popUp_div_cif_input.value;
+        mandarDatosDePedido();
+        console.log("Buscar pulsado");
+        location.href = 'pedidos_nodoo.html';
+
+    });
+
     //DIV RESULTS
     let popUp_div_results = document.createElement("div");
     popUp_div_results.id = "popUp_div_results";
@@ -255,6 +263,26 @@ function PopUp_procesos(section_menus) {
     popUp_contenedor.appendChild(popUp_btn_crearCliente);
 
     return popUp_contenedor;
+
+
+
+}
+
+function mandarDatosDePedido() {
+    let tipo_pedido;
+    let id_clie_prov;
+    miAjax_pedidos = new XMLHttpRequest();
+    miAjax_pedidos.onreadystatechange = function() { /*le decimos "estate preparado cuando cambié"*/
+        if (this.readyState == 4 && this.status == 200) {
+
+            tipo_pedido = "compra";
+            id_clie_prov = 1;
+
+        }
+
+    };
+    miAjax_pedidos.open("GET", "./PHP/tipo_pedido.php?tipo_pedido=" + tipo_pedido + "&id_clie_prov=" + id_clie_prov, true)
+    miAjax_pedidos.send();
 }
 
 //FUNCTION CONSULTA BD
