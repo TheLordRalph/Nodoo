@@ -2,10 +2,15 @@ window.onload = function() {
     const body1 = document.body;
     if (body1.id == "procesos") {
         iniciarProcesos();
+    } else if (body1.id == "pedidos") {
+        iniciarPedidos();
     }
+
 };
 
 // PINTAR EL HTML DE LA PAGINA DE PROCESOS 
+let tipo_pedido;
+
 function iniciarProcesos() {
 
     //APARTADO CREAR UN PEDIDO 
@@ -24,11 +29,11 @@ function iniciarProcesos() {
     if (btn_pedidoCompra) {
         btn_pedidoCompra.addEventListener("click", function() {
 
-            let tipo_pedido = "compra";
+            tipo_pedido = "compra";
             section_menus.classList.add("unselectable");
             section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
-            consultaBD(1);
+            //consultaBD(1);
         });
     }
 
@@ -39,7 +44,7 @@ function iniciarProcesos() {
     if (btn_pedidoVenta) {
         btn_pedidoVenta.addEventListener("click", function() {
 
-            let tipo_pedido = "venta";
+            tipo_pedido = "venta";
             section_menus.classList.add("unselectable");
             section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
@@ -53,7 +58,7 @@ function iniciarProcesos() {
     if (btn_ventaDirecta) {
         btn_ventaDirecta.addEventListener("click", function() {
 
-            let tipo_pedido = "ventaDirecta";
+            tipo_pedido = "ventaDirecta";
 
             section_menus.classList.add("unselectable");
             section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
@@ -160,10 +165,12 @@ function iniciarProcesos() {
 
 }
 
+
 // CREACION DEL POP-UP DE PROCESOS 
+
+let id_clie_prov;
+
 function PopUp_procesos(section_menus, tipo_pedido) {
-
-
 
     let popUp_contenedor = document.createElement("div");
     popUp_contenedor.id = "popUp_contenedor";
@@ -209,12 +216,14 @@ function PopUp_procesos(section_menus, tipo_pedido) {
 
 
     popUp_btn_buscar.addEventListener("click", function() {
-        //   let cod_clieProv = popUp_div_cod_input.value;
-        //   let nombre_clieProv = popUp_div_nombre_input.value;
-        //   let cif_clieProv = popUp_div_cif_input.value;
-        mandarDatosDePedido();
-        console.log("Buscar pulsado");
-        location.href = 'pedidos_nodoo.html';
+        let cod_clieProv = popUp_div_cod_input.value;
+        let nombre_clieProv = popUp_div_nombre_input.value;
+        let cif_clieProv = popUp_div_cif_input.value;
+
+        console.log("Buscar pulsado: codCliente es = " + cod_clieProv + " nombre : " + nombre_clieProv + " cif : " + cif_clieProv);
+        filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv);
+
+
 
     });
 
@@ -268,16 +277,18 @@ function PopUp_procesos(section_menus, tipo_pedido) {
 
 }
 
-function mandarDatosDePedido() {
-    let tipo_pedido;
-    let id_clie_prov;
+
+
+function mandarDatosDePedido(_tipo_pedido, _id_clie_prov) {
+
     miAjax_pedidos = new XMLHttpRequest();
     miAjax_pedidos.onreadystatechange = function() { /*le decimos "estate preparado cuando cambié"*/
         if (this.readyState == 4 && this.status == 200) {
 
-            tipo_pedido = "compra";
-            id_clie_prov = 1;
+            tipo_pedido = _tipo_pedido;
+            id_clie_prov = _id_clie_prov;
 
+            location.href = 'pedidos_nodoo.html';
         }
 
     };
@@ -285,35 +296,71 @@ function mandarDatosDePedido() {
     miAjax_pedidos.send();
 }
 
-//FUNCTION CONSULTA BD
+
+
+function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
+    let respuestaPHP;
+    if (cod_clieProv == "") {
+        cod_clieProv = null;
+    }
+    if (nombre_clieProv == "") {
+        nombre_clieProv = null;
+    }
+    if (cif_clieProv == "") {
+        cif_clieProv = null;
+    }
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("FILTRARCLIENTES() : cod :" + cod_clieProv + " nombre: " + nombre_clieProv + " cif: " + cif_clieProv);
+            respuestaPHP = this.responseText;
+            //arrayRespuesta = JSON.parse(respuestaPHP);
+            console.log(respuestaPHP);
+            // console.log(arrayRespuesta[0] + " nombre : " + arrayRespuesta[1]);
+        }
+    };
+    xhttp.open("GET", "./PHP/filtrar_clientes.php?cod_clieProv=" + cod_clieProv + "&nombre_clieProv=" + nombre_clieProv + "&cif_clieProv=" + cif_clieProv);
+    xhttp.send();
+}
+
+//------------------------------------- PAGINA DE PEDIDOS -----------------------------------------
 /*
-function consultaBD(cod_cliente) {
-    var datosRecibidos;
-    cod_cliente = 1;
+function iniciarPedidos() {
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    miAjax_pedidos = new XMLHttpRequest();
+    miAjax_pedidos.onreadystatechange = function() { /*le decimos "estate preparado cuando cambié"
         if (this.readyState == 4 && this.status == 200) {
-            datosRecibidos = this.responseText;
 
-            console.log(datosRecibidos);
+            //var tipo_pedido = miAjax_tipoPedido.responseText;
+            //console.log(tipo_pedido);
+            //console.log(tipo_pedido[btn_tipo_pedido]);
+            //console.log(tipo_pedido.ide_clie_prov);
 
+
+            //console.log(btn_tipo_pedido + " y el id : " + tipo_pedido.id_clie_prov);
+
+            let titular_pedidos = document.querySelector("#titular");
+
+            if (tipo_pedido == "compra") {
+                titular_pedidos.textContent = "PEDIDO DE COMPRA";
+                inciar_pedidos()
+            } else if (tipo_pedido == "venta") {
+                titular_pedidos.textContent = "PEDIDO DE VENTA";
+                inciar_pedidos()
+            } else {
+                titular_pedidos.textContent = "VENTA DIRECTA";
+                inciar_pedidos()
+            }
         }
-    };
-    xhttp.open("GET", "./PHP/filtrar_clientes.php", true);
-    xhttp.send();
-}*/
 
-function consultaBD() {
-    var nombreEmpresa;
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            nombreEmpresa = this.responseText;
-            document.getElementById("nombreEmpresa").innerHTML = nombreEmpresa;
-        }
     };
-    xhttp.open("GET", "./PHP/select.php", true);
-    xhttp.send();
+    miAjax_tipoPedido.open("GET", "./PHP/tipo_pedido.php", true); // Elegimos el metodo por el que se enviaran los datos . GET = rapido pero poco seguro , POST  = mas lento pero mas seguro
+    miAjax_tipoPedido.send();
+
+};
+*/
+function inciar_pedidos(id_clie_prov) {
+
+
+
 }
