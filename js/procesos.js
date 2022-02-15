@@ -1,5 +1,5 @@
 window.onload = function() {
-    const body1 = document.body;
+    let body1 = document.body;
     if (body1.id == "procesos") {
         iniciarProcesos();
     } else if (body1.id == "pedidos") {
@@ -165,7 +165,6 @@ function iniciarProcesos() {
 
 }
 
-
 // CREACION DEL POP-UP DE PROCESOS 
 
 let id_clie_prov;
@@ -221,8 +220,8 @@ function PopUp_procesos(section_menus, tipo_pedido) {
         let cif_clieProv = popUp_div_cif_input.value;
 
         console.log("Buscar pulsado: codCliente es = " + cod_clieProv + " nombre : " + nombre_clieProv + " cif : " + cif_clieProv);
-        filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv);
 
+        arrayDeClientesFiltrados = filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv);
 
 
     });
@@ -278,7 +277,6 @@ function PopUp_procesos(section_menus, tipo_pedido) {
 }
 
 
-
 function mandarDatosDePedido(_tipo_pedido, _id_clie_prov) {
 
     miAjax_pedidos = new XMLHttpRequest();
@@ -295,7 +293,6 @@ function mandarDatosDePedido(_tipo_pedido, _id_clie_prov) {
     miAjax_pedidos.open("GET", "./PHP/tipo_pedido.php?tipo_pedido=" + tipo_pedido + "&id_clie_prov=" + id_clie_prov, true)
     miAjax_pedidos.send();
 }
-
 
 
 function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
@@ -316,7 +313,8 @@ function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
             respuestaPHP = this.responseText;
             //arrayRespuesta = JSON.parse(respuestaPHP);
             console.log(respuestaPHP);
-            // console.log(arrayRespuesta[0] + " nombre : " + arrayRespuesta[1]);
+            // Devolvemos el array de clientes
+            return respuestaPHP;
         }
     };
     xhttp.open("GET", "./PHP/filtrar_clientes.php?cod_clieProv=" + cod_clieProv + "&nombre_clieProv=" + nombre_clieProv + "&cif_clieProv=" + cif_clieProv);
@@ -324,43 +322,90 @@ function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
 }
 
 //------------------------------------- PAGINA DE PEDIDOS -----------------------------------------
-/*
+
+
+
 function iniciarPedidos() {
 
-    miAjax_pedidos = new XMLHttpRequest();
-    miAjax_pedidos.onreadystatechange = function() { /*le decimos "estate preparado cuando cambié"
-        if (this.readyState == 4 && this.status == 200) {
+    console.log("Entramos en IniciarPedidos");
 
-            //var tipo_pedido = miAjax_tipoPedido.responseText;
-            //console.log(tipo_pedido);
-            //console.log(tipo_pedido[btn_tipo_pedido]);
-            //console.log(tipo_pedido.ide_clie_prov);
+    let titular_pedidos = document.querySelector("#titular_pedidos");
+    let h3_titular_pedidos = document.createElement("h3");
 
+    if (tipo_pedido == "compra") {
+        h3_titular_pedidos.textContent = "PEDIDO DE COMPRA";
+        titular_pedidos.appendChild(h3_titular_pedidos);
 
-            //console.log(btn_tipo_pedido + " y el id : " + tipo_pedido.id_clie_prov);
+    } else if (tipo_pedido == "venta") {
+        h3_titular_pedidos.textContent = "PEDIDO DE VENTA";
+        titular_pedidos.appendChild(h3_titular_pedidos);
 
-            let titular_pedidos = document.querySelector("#titular");
+    } else {
+        h3_titular_pedidos.textContent = "VENTA DIRECTA";
+        titular_pedidos.appendChild(h3_titular_pedidos);
 
-            if (tipo_pedido == "compra") {
-                titular_pedidos.textContent = "PEDIDO DE COMPRA";
-                inciar_pedidos()
-            } else if (tipo_pedido == "venta") {
-                titular_pedidos.textContent = "PEDIDO DE VENTA";
-                inciar_pedidos()
-            } else {
-                titular_pedidos.textContent = "VENTA DIRECTA";
-                inciar_pedidos()
-            }
+    }
+
+    // INICIO : CAJA DE PEDIDOS
+    let caja_pedido = document.querySelector("#caja_de_pedido");
+
+    //Div contenedor_img_datos
+    let div_contenedor_img_datos = document.createElement("div");
+    div_contenedor_img_datos.id = "div_contenedor_img_datos";
+    caja_pedido.appendChild(div_contenedor_img_datos);
+
+    let div_img_caja = document.createElement("img");
+    div_contenedor_img_datos.appendChild(div_img_caja);
+
+    let div_colum1_datos = document.createElement("div");
+    div_contenedor_img_datos.appendChild(div_colum1_datos);
+    let div_colum2_datos = document.createElement("div");
+    div_contenedor_img_datos.appendChild(div_colum2_datos);
+
+    for (let i = 0; i < 8; i++) {
+        let titulo_contenido_dato = document.createElement("div");
+        titulo_contenido_dato.id = "titulo_contenido_dato" + i;
+
+        let titulo_dato = document.createElement("div");
+        titulo_dato.id = "titulo_dato" + i;
+        titulo_contenido_dato.appendChild(titulo_dato);
+
+        let contenido_dato = document.createElement("div");
+        contenido_dato.id = "contenido_dato" + i;
+        titulo_contenido_dato.appendChild(contenido_dato);
+
+        if (i < 4) {
+            div_colum1_datos.appendChild(titulo_contenido_dato);
+        } else {
+            div_colum2_datos.appendChild(titulo_contenido_dato);
         }
 
-    };
-    miAjax_tipoPedido.open("GET", "./PHP/tipo_pedido.php", true); // Elegimos el metodo por el que se enviaran los datos . GET = rapido pero poco seguro , POST  = mas lento pero mas seguro
-    miAjax_tipoPedido.send();
+    }
 
-};
-*/
-function inciar_pedidos(id_clie_prov) {
+    //Div campos de tabla de productos
+    let div_contenedor_nombre_de_campos = document.createElement("div");
+    div_contenedor_nombre_de_campos.id = "div_contenedor_nombre_de_campos";
+    caja_pedido.appendChild(div_contenedor_nombre_de_campos);
 
+    for (let i = 0; i < 7; i++) {
+        let campo = document.createElement("div");
+        campo.id = "campo" + i;
+        div_contenedor_nombre_de_campos.appendChild(campo);
+    }
+
+    //Div caja_productos_pedido
+    let div_caja_productos_pedido = document.createElement("div");
+    div_caja_productos_pedido.id = "div_caja_productos_pedido";
+    caja_pedido.appendChild(div_caja_productos_pedido);
+
+    // FIN : CAJA DE PEDIDOS
+
+
+    //ESTADO PRODUCTO
+
+    //BOTONES DE PEDIDO
+
+    //BOTON CANCELAR PEDIDO
 
 
 }

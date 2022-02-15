@@ -355,4 +355,12 @@ section#menus_procesos div#gestion_pedido button {
   padding: 1%;
   margin: 1% auto;
 }
+
+section#cuerpo_pedidos div#titular_pedidos {
+  background-color: #b61042;
+  color: white;
+  text-align: center;
+  margin: 2% 30%;
+  padding: 20px;
+}
 /*# sourceMappingURL=estilos.css.map */

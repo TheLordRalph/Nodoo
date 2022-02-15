@@ -1,7 +1,9 @@
 section {
-    div {
-        &#titular {
-            @include encabezado_seccion;
+    &#cuerpo_pedidos {
+        div {
+            &#titular_pedidos {
+                @include encabezado_seccion;
+            }
         }
     }
 }
