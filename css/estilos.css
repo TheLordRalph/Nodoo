@@ -188,6 +188,56 @@ img {
   padding: 1%;
 }
 
+#lista_productos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0% auto;
+  margin-top: 4%;
+  padding: 1%;
+  width: 1200px;
+  background-color: #b61042;
+  color: white;
+}
+
+#lista_productos div {
+  width: 200px;
+  text-align: center;
+}
+
+#lista_productos div h4 {
+  font-size: 1vw;
+}
+
+#tabla_productos {
+  margin: 0% auto;
+  width: 1200px;
+  border: 2px solid #b61042;
+  margin-bottom: 4%;
+}
+
+#tabla_productos div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: black;
+  border: 1px solid #b61042;
+}
+
+#tabla_productos div h4 {
+  padding: 1%;
+  margin: 0;
+  width: 200px;
+  text-align: center;
+  font-size: 1vw;
+}
+
 footer {
   background-color: black;
   color: white;

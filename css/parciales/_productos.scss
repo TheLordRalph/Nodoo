@@ -43,3 +43,41 @@
         }
     }
 }
+
+#lista_productos {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0% auto;
+    margin-top: 4%;
+    padding: 1%;
+    width: 1200px;
+    background-color: $rojo_corporativo;
+    color: white;
+    div {
+        width: 200px;
+        text-align: center;
+        h4 {
+            font-size: 1vw;
+        }
+    }
+}
+
+#tabla_productos {
+    margin: 0% auto;
+    width: 1200px;
+    border: 2px solid $rojo_corporativo;
+    margin-bottom: 4%;
+    div {
+        display: flex;
+        justify-content: space-evenly;
+        color: black;
+        border: 1px solid $rojo_corporativo;
+        h4 {
+            padding: 1%;
+            margin: 0;
+            width: 200px;
+            text-align: center;
+            font-size: 1vw;
+        }
+    }
+}
