@@ -361,6 +361,68 @@ section#menus_procesos div#gestion_pedido button {
   color: white;
 }
 
+#div_popUp_pedidos {
+  border: 10px solid #b61042;
+  border-radius: 20px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 5% auto;
+  background-color: white;
+  width: 90%;
+  text-align: center;
+}
+
+#div_popUp_pedidos img {
+  right: 20%;
+  padding-top: 5%;
+  margin-left: 86%;
+  width: 7%;
+}
+
+#div_popUp_pedidos section#section_caja_tabla {
+  border: solid 1px #b61042;
+  margin: 2%;
+}
+
+#div_popUp_pedidos section#section_caja_tabla section#lista_productos {
+  background-color: #b61042;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1%;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#div_popUp_pedidos section#section_caja_tabla section#lista_productos div {
+  width: 14%;
+}
+
+#div_popUp_pedidos section#section_caja_tabla section#tabla_productos {
+  padding: 1% 0;
+}
+
+#div_popUp_pedidos section#section_caja_tabla section#tabla_productos > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#div_popUp_pedidos section#section_caja_tabla section#tabla_productos > div h4 {
+  width: 14%;
+}
+
 section#cuerpo_pedidos div#titular_pedidos {
   background-color: #b61042;
   color: white;
@@ -448,6 +510,8 @@ section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos di
 }
 
 section#cuerpo_pedidos div#caja_de_pedido div#div_btn_add_producto {
+  margin: 1% 3%;
+  border-top: solid 1px #b61042;
   text-align: center;
 }
 
@@ -475,7 +539,7 @@ section#cuerpo_pedidos div#estado_pedido {
   padding: 2%;
   color: white;
   background-color: #b61042;
-  margin: 2% auto;
+  margin: 5% auto;
   display: flex;
   flex-wrap: wrap;
   -webkit-box-align: center;
@@ -484,14 +548,42 @@ section#cuerpo_pedidos div#estado_pedido {
   width: 50%;
 }
 
-section#cuerpo_pedidos div#estado_pedido > h4 {
-  padding: 0 5%;
-}
-
 section#cuerpo_pedidos div#estado_pedido div {
   text-align: center;
   background-color: white;
   color: black;
-  padding: 2%;
+  padding: 1% 5%;
+}
+
+section#cuerpo_pedidos div#botones_gestion_pedido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+section#cuerpo_pedidos div#botones_gestion_pedido button {
+  background-color: white;
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 20%;
+}
+
+section#cuerpo_pedidos div#boton_cancelar_pedido {
+  margin: 3%;
+  text-align: center;
+}
+
+section#cuerpo_pedidos div#boton_cancelar_pedido button {
+  width: 20%;
+  background-color: white;
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=estilos.css.map */

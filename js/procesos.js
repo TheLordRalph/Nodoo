@@ -32,7 +32,7 @@ function iniciarProcesos() {
 
             tipo_pedido = "compra";
             section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
+            section_menus.insertAdjacentElement("afterend", popUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
             //consultaBD(1);
         });
@@ -47,7 +47,7 @@ function iniciarProcesos() {
 
             tipo_pedido = "venta";
             section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
+            section_menus.insertAdjacentElement("afterend", popUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
         });
     }
@@ -62,7 +62,7 @@ function iniciarProcesos() {
             tipo_pedido = "ventaDirecta";
 
             section_menus.classList.add("unselectable");
-            section_menus.insertAdjacentElement("afterend", PopUp_procesos(section_menus, tipo_pedido));
+            section_menus.insertAdjacentElement("afterend", popUp_procesos(section_menus, tipo_pedido));
             console.log("fin del eventListener");
 
 
@@ -170,7 +170,7 @@ function iniciarProcesos() {
 
 let id_clie_prov;
 
-function PopUp_procesos(section_menus, tipo_pedido) {
+function popUp_procesos(section_menus, tipo_pedido) {
 
     let popUp_contenedor = document.createElement("div");
     popUp_contenedor.id = "popUp_contenedor";
@@ -333,7 +333,8 @@ function iniciarPedidos() {
 
     console.log("Entramos en IniciarPedidos");
 
-    let titular_pedidos = document.querySelector("#titular_pedidos");
+    const section_pedidos = document.querySelector("#section_pedidos");
+    const titular_pedidos = document.querySelector("#titular_pedidos");
     let h3_titular_pedidos = document.createElement("h3");
 
     if (tipo_pedido == "compra") {
@@ -351,7 +352,7 @@ function iniciarPedidos() {
     }
 
     //---- INICIO : CAJA DE PEDIDOS
-    let caja_pedido = document.querySelector("#caja_de_pedido");
+    const caja_pedido = document.querySelector("#caja_de_pedido");
 
 
     //Div contenedor_img_datos
@@ -481,6 +482,13 @@ function iniciarPedidos() {
 
     let btn_add_producto = document.createElement("button");
     btn_add_producto.textContent = "Añadir producto";
+    btn_add_producto.addEventListener("click", function() {
+
+        section_pedidos.classList.add("unselectable");
+        popUp_pedidos(section_pedidos);
+        //section_pedidos.insertAdjacentElement("afterend", popUp_pedidos(section_pedidos));
+        console.log("fin del eventListener");
+    });
 
     div_btn_add_producto.appendChild(btn_add_producto);
     caja_pedido.appendChild(div_btn_add_producto);
@@ -490,7 +498,7 @@ function iniciarPedidos() {
 
 
     //ESTADO PRODUCTO
-    let div_estado_pedido = document.querySelector("#estado_pedido");
+    const div_estado_pedido = document.querySelector("#estado_pedido");
 
     let estado_pedido_titulo_h4 = document.createElement("h4");
     estado_pedido_titulo_h4.textContent = "ESTADO DE PEDIDO";
@@ -505,10 +513,65 @@ function iniciarPedidos() {
     div_estado_pedido_contenido.appendChild(estado_pedido_contenido_h4);
 
 
-
     //BOTONES DE PEDIDO
 
+    let div_botones_gestion_pedido = document.querySelector("#botones_gestion_pedido");
+    let btn_crear_presupuesto = document.createElement("button");
+    btn_crear_presupuesto.textContent = "Crear Presupuesto";
+    div_botones_gestion_pedido.appendChild(btn_crear_presupuesto);
+    let btn_crear_pedido = document.createElement("button");
+    btn_crear_pedido.textContent = "Crear Pedido";
+    div_botones_gestion_pedido.appendChild(btn_crear_pedido);
+    let btn_finalizar_pedido = document.createElement("button");
+    btn_finalizar_pedido.textContent = "Finalizar Pedido";
+    div_botones_gestion_pedido.appendChild(btn_finalizar_pedido);
+
+
+
+
     //BOTON CANCELAR PEDIDO
+    let div_boton_cancelar = document.querySelector("#boton_cancelar_pedido");
+    let btn_cancelar_pedido = document.createElement("button");
+    btn_cancelar_pedido.textContent = "Cancelar Pedido";
+    div_boton_cancelar.appendChild(btn_cancelar_pedido);
+
+}
+
+function popUp_pedidos(section_pedidos) {
+
+    let div_popUp_pedidos = document.createElement("div");
+    div_popUp_pedidos.id = "div_popUp_pedidos";
+    section_pedidos.insertAdjacentElement("afterend", div_popUp_pedidos);
+
+    //Div btn_cerrar
+    let img_cerrar = document.createElement("img");
+    img_cerrar.id = "img_cerrar_popUp";
+    img_cerrar.src = "images/x_cerrar.svg";
+    img_cerrar.addEventListener("click", function() {
+
+        section_pedidos.classList.remove("unselectable");
+        div_popUp_pedidos.remove();
+        console.log("pulso cerrar.")
+
+    });
+    div_popUp_pedidos.appendChild(img_cerrar);
+
+    //Div caja_tabla
+    let section_caja_tabla = document.createElement("section");
+    section_caja_tabla.id = "section_caja_tabla";
+    div_popUp_pedidos.appendChild(section_caja_tabla);
+
+
+
+    let section_lista_productos = document.createElement("section");
+    section_lista_productos.id = "lista_productos";
+    let section_tabla_productos = document.createElement("section");
+    section_tabla_productos.id = "tabla_productos";
+    section_caja_tabla.appendChild(section_lista_productos);
+    section_caja_tabla.appendChild(section_tabla_productos);
+
+    lista_productos();
+
 
 
 }
