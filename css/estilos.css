@@ -356,11 +356,142 @@ section#menus_procesos div#gestion_pedido button {
   margin: 1% auto;
 }
 
+.fondo_rojo {
+  background-color: #b61042;
+  color: white;
+}
+
 section#cuerpo_pedidos div#titular_pedidos {
   background-color: #b61042;
   color: white;
   text-align: center;
   margin: 2% 30%;
   padding: 20px;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido {
+  border: solid 2px #b61042;
+  margin: 0 5%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_img_datos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_img_datos > div {
+  width: 33.3%;
+  text-align: center;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_img_datos > div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_img_datos > div div h5 {
+  width: 50%;
+  margin: 0;
+  padding: 3%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos {
+  background-color: #b61042;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1%;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo0 {
+  width: 10%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo1 {
+  width: 40%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo2 {
+  width: 10%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo3 {
+  width: 10%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo4 {
+  width: 10%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo5 {
+  width: 10%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_contenedor_nombre_de_campos div#campo6 {
+  width: 10%;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_btn_add_producto {
+  text-align: center;
+}
+
+section#cuerpo_pedidos div#caja_de_pedido div#div_btn_add_producto button {
+  width: 30%;
+  background-color: white;
+  border: 5px solid #b61042;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 2vw;
+  padding: 2%;
+  margin: 2% auto;
+}
+
+section#cuerpo_pedidos div#estado_pedido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 1%;
+  padding: 2%;
+  color: white;
+  background-color: #b61042;
+  margin: 2% auto;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+section#cuerpo_pedidos div#estado_pedido > h4 {
+  padding: 0 5%;
+}
+
+section#cuerpo_pedidos div#estado_pedido div {
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 2%;
 }
 /*# sourceMappingURL=estilos.css.map */

@@ -1,8 +1,96 @@
+.fondo_rojo {
+    background-color: $rojo_corporativo;
+    color: white;
+}
+
 section {
     &#cuerpo_pedidos {
         div {
             &#titular_pedidos {
                 @include encabezado_seccion;
+            }
+            &#caja_de_pedido {
+                border: solid 2px $rojo_corporativo;
+                margin: 0 5%;
+                div {
+                    &#div_contenedor_img_datos {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        >div {
+                            width: 33.3%;
+                            text-align: center;
+                            div {
+                                display: flex;
+                                flex-wrap: wrap;
+                                h5 {
+                                    width: 50%;
+                                    margin: 0;
+                                    padding: 3%;
+                                }
+                            }
+                        }
+                    }
+                    &#div_contenedor_nombre_de_campos {
+                        background-color: $rojo_corporativo;
+                        color: white;
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 1%;
+                        text-align: center;
+                        align-items: center;
+                        div {
+                            &#campo0 {
+                                width: 10%;
+                            }
+                            &#campo1 {
+                                width: 40%;
+                            }
+                            &#campo2 {
+                                width: 10%;
+                            }
+                            &#campo3 {
+                                width: 10%;
+                            }
+                            &#campo4 {
+                                width: 10%;
+                            }
+                            &#campo5 {
+                                width: 10%;
+                            }
+                            &#campo6 {
+                                width: 10%;
+                            }
+                        }
+                    }
+                    &#div_btn_add_producto {
+                        text-align: center;
+                        button {
+                            width: 30%;
+                            @include estilo_caja_peque;
+                            font-size: 2vw;
+                            padding: 2%;
+                            margin: 2% auto;
+                        }
+                    }
+                }
+            }
+            &#estado_pedido {
+                @include caja_filtar;
+                margin: 2% auto;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 50%;
+                >h4 {
+                    padding: 0 5%;
+                }
+                div {
+                    text-align: center;
+                    background-color: white;
+                    color: black;
+                    padding: 2%;
+                }
             }
         }
     }

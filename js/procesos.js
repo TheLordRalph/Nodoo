@@ -7,8 +7,9 @@ window.onload = function() {
     }
 
 };
+//-----------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------ PINTAR EL HTML DE LA PAGINA DE PROCESOS -----------------------------------------------
 
-// PINTAR EL HTML DE LA PAGINA DE PROCESOS 
 let tipo_pedido;
 
 function iniciarProcesos() {
@@ -164,8 +165,8 @@ function iniciarProcesos() {
     div_gestionPedidos.appendChild(btn_buscar_gestionP);
 
 }
-
-// CREACION DEL POP-UP DE PROCESOS 
+// ------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------- CREACION DEL POP-UP DE PROCESOS --------------------------------------------------
 
 let id_clie_prov;
 
@@ -276,6 +277,8 @@ function PopUp_procesos(section_menus, tipo_pedido) {
 
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------- CREAR FUNCION MANDAR PEDIDO ---------------------------------------------------------------
 
 function mandarDatosDePedido(_tipo_pedido, _id_clie_prov) {
 
@@ -294,6 +297,8 @@ function mandarDatosDePedido(_tipo_pedido, _id_clie_prov) {
     miAjax_pedidos.send();
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------- CREAR FUNCION FILTRAR_CLIENTES-----------------------------------------------------------
 
 function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
     let respuestaPHP;
@@ -321,9 +326,8 @@ function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
     xhttp.send();
 }
 
-//------------------------------------- PAGINA DE PEDIDOS -----------------------------------------
-
-
+//-------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------- PINTAR HTML PAGINA DE PEDIDOS ----------------------------------------------------
 
 function iniciarPedidos() {
 
@@ -346,16 +350,20 @@ function iniciarPedidos() {
 
     }
 
-    // INICIO : CAJA DE PEDIDOS
+    //---- INICIO : CAJA DE PEDIDOS
     let caja_pedido = document.querySelector("#caja_de_pedido");
+
 
     //Div contenedor_img_datos
     let div_contenedor_img_datos = document.createElement("div");
     div_contenedor_img_datos.id = "div_contenedor_img_datos";
     caja_pedido.appendChild(div_contenedor_img_datos);
 
-    let div_img_caja = document.createElement("img");
+    let div_img_caja = document.createElement("div");
+    let img_caja = document.createElement("img");
+    img_caja.src = "./images/noddo_blanco.png"
     div_contenedor_img_datos.appendChild(div_img_caja);
+    div_img_caja.appendChild(img_caja);
 
     let div_colum1_datos = document.createElement("div");
     div_contenedor_img_datos.appendChild(div_colum1_datos);
@@ -366,13 +374,15 @@ function iniciarPedidos() {
         let titulo_contenido_dato = document.createElement("div");
         titulo_contenido_dato.id = "titulo_contenido_dato" + i;
 
-        let titulo_dato = document.createElement("div");
+        let titulo_dato = document.createElement("h5");
         titulo_dato.id = "titulo_dato" + i;
+        titulo_dato.className = "fondo_rojo";
         titulo_contenido_dato.appendChild(titulo_dato);
 
-        let contenido_dato = document.createElement("div");
+        let contenido_dato = document.createElement("h5");
         contenido_dato.id = "contenido_dato" + i;
         titulo_contenido_dato.appendChild(contenido_dato);
+
 
         if (i < 4) {
             div_colum1_datos.appendChild(titulo_contenido_dato);
@@ -380,7 +390,46 @@ function iniciarPedidos() {
             div_colum2_datos.appendChild(titulo_contenido_dato);
         }
 
+        switch (i) {
+            case 0:
+                titulo_dato.textContent = "Nº Pedido";
+                contenido_dato.textContent = "Contenido";
+                break;
+            case 1:
+                titulo_dato.textContent = "Cliente/Proveedor";
+                contenido_dato.textContent = "Contenido";
+                break;
+            case 2:
+                titulo_dato.textContent = "Tipo Pedido";
+                contenido_dato.textContent = "Contenido";
+                break;
+            case 3:
+                titulo_dato.textContent = "Descuento";
+                contenido_dato.textContent = "Contenido";
+                break;
+            case 4:
+                titulo_dato.textContent = "Fecha Presup.";
+                contenido_dato.textContent = "Contenido";
+
+                break;
+            case 5:
+                titulo_dato.textContent = "Fecha Pedido";
+                contenido_dato.textContent = "Contenido";
+                break;
+            case 6:
+                titulo_dato.textContent = "Fecha Prevista";
+                contenido_dato.textContent = "Contenido";
+                break;
+            case 7:
+                titulo_dato.textContent = "Fecha Final";
+                contenido_dato.textContent = "Contenido";
+                break;
+            default:
+
+        }
+
     }
+
 
     //Div campos de tabla de productos
     let div_contenedor_nombre_de_campos = document.createElement("div");
@@ -390,7 +439,35 @@ function iniciarPedidos() {
     for (let i = 0; i < 7; i++) {
         let campo = document.createElement("div");
         campo.id = "campo" + i;
+        let campo_h5 = document.createElement("h5");
         div_contenedor_nombre_de_campos.appendChild(campo);
+        campo.appendChild(campo_h5);
+        switch (i) {
+            case 0:
+                campo_h5.textContent = "Producto";
+                break;
+            case 1:
+                campo_h5.textContent = "Nombre";
+                break;
+            case 2:
+                campo_h5.textContent = "Precio Unitario";
+                break;
+            case 3:
+                campo_h5.textContent = "Cantidad";
+                break;
+            case 4:
+                campo_h5.textContent = "IVA";
+                break;
+            case 5:
+                campo_h5.textContent = "Importe";
+                break;
+            case 6:
+                campo_h5.textContent = "Descuento";
+                break;
+
+            default:
+
+        }
     }
 
     //Div caja_productos_pedido
@@ -398,10 +475,36 @@ function iniciarPedidos() {
     div_caja_productos_pedido.id = "div_caja_productos_pedido";
     caja_pedido.appendChild(div_caja_productos_pedido);
 
-    // FIN : CAJA DE PEDIDOS
+    //Div boton add producto
+    let div_btn_add_producto = document.createElement("div");
+    div_btn_add_producto.id = "div_btn_add_producto";
+
+    let btn_add_producto = document.createElement("button");
+    btn_add_producto.textContent = "Añadir producto";
+
+    div_btn_add_producto.appendChild(btn_add_producto);
+    caja_pedido.appendChild(div_btn_add_producto);
+
+
+    //----- FIN : CAJA DE PEDIDOS
 
 
     //ESTADO PRODUCTO
+    let div_estado_pedido = document.querySelector("#estado_pedido");
+
+    let estado_pedido_titulo_h4 = document.createElement("h4");
+    estado_pedido_titulo_h4.textContent = "ESTADO DE PEDIDO";
+
+    let div_estado_pedido_contenido = document.createElement("div");
+    let estado_pedido_contenido_h4 = document.createElement("h4");
+    estado_pedido_contenido_h4.id = "estado_pedido_contenido_h4";
+    estado_pedido_contenido_h4.textContent = "estado de pedido";
+
+    div_estado_pedido.appendChild(estado_pedido_titulo_h4);
+    div_estado_pedido.appendChild(div_estado_pedido_contenido);
+    div_estado_pedido_contenido.appendChild(estado_pedido_contenido_h4);
+
+
 
     //BOTONES DE PEDIDO
 
