@@ -1,0 +1,56 @@
+#titulo_seccion {
+    background-color: #b61042;
+    color: white;
+    text-align: center;
+    margin: 2% 30%;
+    padding: 20px;
+}
+
+#cuerpo_facturas {
+    #nav_facturas {
+        margin: auto;
+        width: 85%;
+        padding: 30px;
+        background-color: #b61042;
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        justify-content: space-between;
+        .campos_facturas {
+            margin: auto;
+        }
+    }
+    #lista_facturas {
+        width: 85%;
+        margin: auto;
+        height: 850px;
+        margin-bottom: 2%;
+        border: solid #b61042 2px;
+        overflow-y: scroll;
+        .blanco {
+            background-color: white;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .rojo {
+            background-color: #ffdfdf;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}
+
+#parametro_factura {
+    margin: auto;
+    width: 85%;
+    padding: 30px;
+    background-color: #b61042;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    justify-content: space-between;
+}
