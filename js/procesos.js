@@ -211,35 +211,27 @@ function popUp_procesos(section_menus, tipo_pedido) {
     let popUp_div_cif_input = document.createElement("input");
     popUp_div_cif_input.type = "text";
 
+
+    //DIV RESULTS
+    let popUp_div_results = document.createElement("div");
+    popUp_div_results.id = "popUp_div_results";
+    popUp_div_results.textContent = "Resultados..."
+
+    // BTN BUSCAR
     let popUp_btn_buscar = document.createElement("button");
     popUp_btn_buscar.textContent = "Buscar";
-
 
     popUp_btn_buscar.addEventListener("click", function() {
         let cod_clieProv = popUp_div_cod_input.value;
         let nombre_clieProv = popUp_div_nombre_input.value;
         let cif_clieProv = popUp_div_cif_input.value;
 
+
         console.log("Buscar pulsado: codCliente es = " + cod_clieProv + " nombre : " + nombre_clieProv + " cif : " + cif_clieProv);
 
-        arrayDeClientesFiltrados = filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv);
-
+        arrayDeClientesFiltrados = filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv, popUp_div_results_cliente);
 
     });
-
-    //DIV RESULTS
-    let popUp_div_results = document.createElement("div");
-    popUp_div_results.id = "popUp_div_results";
-    let popUp_div_results_h4 = document.createElement("h4");
-    popUp_div_results_h4.textContent = "Resultados...";
-    //DIV DE CADA CLIENTE DE DIV RESULTS 
-    let popUp_div_results_cliente = document.createElement("div");
-    popUp_div_results_cliente.id = "div_result_cliente";
-    let popUp_results_cliente_cod = document.createElement("h4");
-    //popUp_results_cliente_cod.textContent = //resultado de consulta del codClie. ;
-    let popUp_results_cliente_nombre = document.createElement("h4");
-    //popUp_results_cliente_nombre.textContent = //resultado de consulta del nombre del Cliente. ;
-
 
 
 
@@ -300,7 +292,7 @@ function mandarDatosDePedido(_tipo_pedido, _id_clie_prov) {
 //-------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- CREAR FUNCION FILTRAR_CLIENTES-----------------------------------------------------------
 
-function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
+function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv, contenedor_results) {
     let respuestaPHP;
     if (cod_clieProv == "") {
         cod_clieProv = null;
@@ -311,6 +303,8 @@ function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
     if (cif_clieProv == "") {
         cif_clieProv = null;
     }
+    contenedor_results.textContent = "";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -319,7 +313,11 @@ function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv) {
             //arrayRespuesta = JSON.parse(respuestaPHP);
             console.log(respuestaPHP);
             // Devolvemos el array de clientes
-            return respuestaPHP;
+            respuestaPHP.forEach(element => {
+                //Creamos un div por cada resultado de la consulta (cada cliente)
+                //hacemos appendChild al contenedor de resultados
+            });
+
         }
     };
     xhttp.open("GET", "./PHP/filtrar_clientes.php?cod_clieProv=" + cod_clieProv + "&nombre_clieProv=" + nombre_clieProv + "&cif_clieProv=" + cif_clieProv);
@@ -503,14 +501,13 @@ function iniciarPedidos() {
     let estado_pedido_titulo_h4 = document.createElement("h4");
     estado_pedido_titulo_h4.textContent = "ESTADO DE PEDIDO";
 
-    let div_estado_pedido_contenido = document.createElement("div");
     let estado_pedido_contenido_h4 = document.createElement("h4");
     estado_pedido_contenido_h4.id = "estado_pedido_contenido_h4";
     estado_pedido_contenido_h4.textContent = "estado de pedido";
 
     div_estado_pedido.appendChild(estado_pedido_titulo_h4);
-    div_estado_pedido.appendChild(div_estado_pedido_contenido);
-    div_estado_pedido_contenido.appendChild(estado_pedido_contenido_h4);
+    div_estado_pedido.appendChild(estado_pedido_contenido_h4);
+
 
 
     //BOTONES DE PEDIDO
@@ -537,6 +534,9 @@ function iniciarPedidos() {
 
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------
+//---------------------------- CREAMOS EL POPUP DE PEDIDOS PARA AÑADIR PRODUCTOS ----------------------------------------------------
+
 function popUp_pedidos(section_pedidos) {
 
     let div_popUp_pedidos = document.createElement("div");
@@ -556,11 +556,55 @@ function popUp_pedidos(section_pedidos) {
     });
     div_popUp_pedidos.appendChild(img_cerrar);
 
+
+    //DIV titulo popUp
+    let titulo_popUp_pedidos = document.createElement("div")
+    titulo_popUp_pedidos.id = "titulo_popUp_pedidos";
+    div_popUp_pedidos.appendChild(titulo_popUp_pedidos);
+
+    let titulo_popUp_pedidos_h4 = document.querySelector("h4");
+    titulo_popUp_pedidos_h4.textContent = "Añadir Producto";
+    titulo_popUp_pedidos.appendChild(titulo_popUp_pedidos_h4);
+
+
+    //Div campos de filtrado 
+    let div_div_filtros_prod = document.createElement("div");
+    div_div_filtros_prod.id = "div_div_filtros_prod";
+    div_popUp_pedidos.appendChild(div_div_filtros_prod);
+
+
+    for (let i = 0; i < 3; i++) {
+        let div_filtro = document.createElement("div");
+        div_filtro.id = "div_filto" + i;
+        div_div_filtros_prod.appendChild(div_filtro);
+
+        let div_filto_h4 = document.createElement("h4");
+        let div_filtro_input = document.createElement("input");
+
+        switch (i) {
+            case 0:
+                div_filto_h4.textContent = "Código Producto";
+                div_filtro_input.type = "number";
+                break;
+            case 1:
+                div_filto_h4.textContent = "Categoria";
+                div_filtro_input.type = "select";
+                break;
+            case 2:
+                div_filto_h4.textContent = "Nombre Producto";
+                div_filtro_input.type = "text";
+                break;
+            default:
+        }
+        div_filtro.appendChild(div_filto_h4);
+        div_filtro.appendChild(div_filtro_input);
+
+    }
+
     //Div caja_tabla
     let section_caja_tabla = document.createElement("section");
     section_caja_tabla.id = "section_caja_tabla";
     div_popUp_pedidos.appendChild(section_caja_tabla);
-
 
 
     let section_lista_productos = document.createElement("section");

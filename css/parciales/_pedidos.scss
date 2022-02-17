@@ -12,6 +12,8 @@
     bottom: 0;
     margin: 5% auto;
     background-color: white;
+    height: 100%;
+    overflow-y: scroll;
     width: 90%;
     text-align: center;
     img {
@@ -19,6 +21,26 @@
         padding-top: 5%;
         margin-left: 86%;
         width: 7%;
+    }
+    div {
+        &#titulo_popUp_pedidos {
+            width: 30%;
+            margin: 2% auto;
+            padding: 2%;
+            @include estilo_caja_peque;
+        }
+        &#div_div_filtros_prod {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 10%;
+            justify-content: space-evenly;
+            div {
+                @include caja_filtar;
+            }
+            input {
+                width: 45%;
+            }
+        }
     }
     section {
         &#section_caja_tabla {
@@ -133,12 +155,12 @@ section {
                 flex-wrap: wrap;
                 align-items: center;
                 width: 50%;
-                >h4 {}
-                div {
+                h4#estado_pedido_contenido_h4 {
                     text-align: center;
                     background-color: white;
                     color: black;
-                    padding: 1% 5%;
+                    padding: 2% 5%;
+                    margin: 0;
                 }
             }
             &#botones_gestion_pedido {
