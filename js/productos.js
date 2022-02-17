@@ -1,5 +1,8 @@
 window.onload = function() {
-    lista_productos();
+    let body1 = document.body;
+    if (body1.id == "productos") {
+        lista_productos();
+    }
 }
 
 
@@ -23,12 +26,14 @@ function lista_productos() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let tabla_productos = document.getElementById("tabla_productos");
-            let fila_producto
+            let fila_producto;
+            let contador = 0;
 
             productos = JSON.parse(this.responseText);
 
             productos.forEach(i => {
                 fila_producto = document.createElement("div");
+                fila_producto.id = "producto" + contador;
 
                 for (let j = 0; j < i.length; j++) {
                     let valor_fila_producto = document.createElement("h4");
@@ -36,9 +41,20 @@ function lista_productos() {
                     fila_producto.appendChild(valor_fila_producto);
                 }
                 tabla_productos.appendChild(fila_producto);
+                contador++;
             });
         }
     };
     xhttp.open("GET", "./PHP/productos.php", true);
     xhttp.send();
 }
+
+window.addEventListener("click", (event) => {
+    if (event.path[1].id.startsWith("producto")) {
+        let unselectable_producto = document.getElementById("unselectable_producto");
+        let popUp_productos = document.getElementById("popUp_productos");
+
+        unselectable_producto.setAttribute("class", "unselectable");
+        popUp_productos.setAttribute("class", "popUp_productos");
+    }
+});

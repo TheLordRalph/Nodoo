@@ -238,6 +238,27 @@ img {
   font-size: 1vw;
 }
 
+.unselectable {
+  pointer-events: none;
+  background-color: grey;
+  opacity: 50%;
+}
+
+.popUp_productos {
+  border: 10px solid #b61042;
+  border-radius: 20px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 5% auto;
+  background-color: white;
+  width: 30%;
+  text-align: center;
+}
+
 footer {
   background-color: black;
   color: white;

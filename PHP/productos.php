@@ -1,7 +1,7 @@
 <?php
-$servername = "10.0.7.47";
-$username = "Admin";
-$password = "Admin1234";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $database = "nodoo";
 
 $respuesta=array();
