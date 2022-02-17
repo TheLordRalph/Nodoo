@@ -229,7 +229,7 @@ function popUp_procesos(section_menus, tipo_pedido) {
 
         console.log("Buscar pulsado: codCliente es = " + cod_clieProv + " nombre : " + nombre_clieProv + " cif : " + cif_clieProv);
 
-        arrayDeClientesFiltrados = filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv, popUp_div_results_cliente);
+        filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv, popUp_div_results);
 
     });
 
@@ -313,11 +313,11 @@ function filtrar_clientes(cod_clieProv, nombre_clieProv, cif_clieProv, contenedo
             //arrayRespuesta = JSON.parse(respuestaPHP);
             console.log(respuestaPHP);
             // Devolvemos el array de clientes
-            respuestaPHP.forEach(element => {
+            /* respuestaPHP.forEach(element => {
                 //Creamos un div por cada resultado de la consulta (cada cliente)
                 //hacemos appendChild al contenedor de resultados
             });
-
+*/
         }
     };
     xhttp.open("GET", "./PHP/filtrar_clientes.php?cod_clieProv=" + cod_clieProv + "&nombre_clieProv=" + nombre_clieProv + "&cif_clieProv=" + cif_clieProv);
