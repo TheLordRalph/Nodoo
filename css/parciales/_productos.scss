@@ -1,0 +1,104 @@
+#titulo_producto {
+    background-color: $rojo_corporativo;
+    color: white;
+    text-align: center;
+    margin: 2% 30%;
+    padding: 20px;
+}
+
+.caja {
+    @include estilo_caja;
+    width: 70%;
+    margin: auto;
+    .crearBuscar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 70%;
+        margin: auto;
+        padding: 2% 0;
+        input {
+            @include estilo_caja_peque;
+            width: 14vw;
+            padding: 1%;
+        }
+    }
+    .filtro_busqueda_producto_1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        color: white;
+        margin: 2% 0;
+        div {
+            width: 40%;
+            display: inline-flex;
+            background-color: $rojo_corporativo;
+            padding: 1%;
+            justify-content: space-evenly;
+        }
+        input {
+            @include estilo_caja_peque;
+            width: 14vw;
+            padding: 1%;
+        }
+    }
+}
+
+#lista_productos {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0% auto;
+    margin-top: 4%;
+    padding: 1%;
+    width: 1200px;
+    background-color: $rojo_corporativo;
+    color: white;
+    div {
+        width: 200px;
+        text-align: center;
+        h4 {
+            font-size: 1vw;
+        }
+    }
+}
+
+#tabla_productos {
+    margin: 0% auto;
+    width: 1200px;
+    border: 2px solid $rojo_corporativo;
+    margin-bottom: 4%;
+    div {
+        display: flex;
+        justify-content: space-evenly;
+        color: black;
+        border: 1px solid $rojo_corporativo;
+        h4 {
+            padding: 1%;
+            margin: 0;
+            width: 200px;
+            text-align: center;
+            font-size: 1vw;
+        }
+    }
+}
+
+.unselectable {
+    pointer-events: none;
+    background-color: grey;
+    opacity: 50%;
+}
+
+.popUp_productos {
+    border: 10px solid #b61042;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 5% auto;
+    background-color: white;
+    width: 30%;
+    text-align: center;
+}

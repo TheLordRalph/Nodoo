@@ -5,6 +5,9 @@
         "estilos.scss",
         "parciales/_variables.scss",
         "parciales/_header.scss",
+        "parciales/_home.scss",
+        "parciales/_productos.scss",
+        "parciales/_footer.scss"
         "parciales/_footer.scss",
         "parciales/_lista_facturas.scss"
     ],
