@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -150,12 +152,11 @@ footer a:hover {
   margin: auto;
   width: 85%;
   padding: 30px;
+  padding-right: 20px;
   background-color: #b61042;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   color: white;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -164,6 +165,8 @@ footer a:hover {
 
 #cuerpo_facturas #nav_facturas .campos_facturas {
   margin: auto;
+  width: 16.66%;
+  text-align: center;
 }
 
 #cuerpo_facturas #lista_facturas {
@@ -177,43 +180,174 @@ footer a:hover {
 
 #cuerpo_facturas #lista_facturas .blanco {
   background-color: white;
-  padding: 50px;
+  padding: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-#cuerpo_facturas #lista_facturas .rojo {
-  background-color: #ffdfdf;
-  padding: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#parametro_factura {
+#cuerpo_facturas #lista_facturas .blanco .parametro_factura {
   margin: auto;
-  width: 85%;
-  padding: 30px;
+  width: 16.66%;
+  text-align: center;
+}
+
+#cuerpo_facturas #lista_facturas .blanco .parametro_factura_2 {
+  margin: auto;
+  width: 16.66%;
+  text-align: start;
+}
+
+#cuerpo_facturas #lista_facturas .blanco .parametro_factura_3 {
+  margin: auto;
+  width: 16.66%;
+  text-align: end;
+}
+
+#cuerpo_facturas .rojo {
+  background-color: #ffdfdf;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#cuerpo_facturas .rojo .parametro_factura {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
+}
+
+#cuerpo_facturas .rojo .parametro_factura_2 {
+  margin: auto;
+  width: 16.66%;
+  text-align: start;
+}
+
+#cuerpo_facturas .rojo .parametro_factura_3 {
+  margin: auto;
+  width: 16.66%;
+  text-align: end;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+#detalle_facturas #encabezado_factura {
+  width: 80%;
+  margin: auto;
+  border: #b61042 solid 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#detalle_facturas #encabezado_factura #logotipo {
+  width: 33.33%;
+}
+
+#detalle_facturas #encabezado_factura img {
+  padding: 20px;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura {
+  width: 66.66%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_1,
+#detalle_facturas #encabezado_factura #datos_factura #datos_3 {
+  width: 20%;
   background-color: #b61042;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_1 .detalle_datos,
+#detalle_facturas #encabezado_factura #datos_factura #datos_3 .detalle_datos {
+  height: 33.33%;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_2,
+#detalle_facturas #encabezado_factura #datos_factura #datos_4 {
+  width: 30%;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_2 .detalle_datos,
+#detalle_facturas #encabezado_factura #datos_factura #datos_4 .detalle_datos {
+  border: #b61042 1px solid;
+  height: 33.33%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+}
+
+#detalle_facturas #nav_facturas {
+  margin: auto;
+  width: 80%;
+  padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  color: black;
+  color: white;
+  background-color: #b61042;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#detalle_facturas #nav_facturas .campos_facturas {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
+}
+
+#detalle_facturas #cuerpo_factura {
+  width: 80%;
+  margin: auto;
+  height: 850px;
+  border: #b61042 1px solid;
+  margin-bottom: 2%;
+}
+
+#detalle_facturas #cuerpo_factura .blanco {
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#detalle_facturas #cuerpo_factura .blanco .parametro_factura {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
+}
+
+#detalle_facturas #cuerpo_factura .blanco .parametro_factura_2 {
+  margin: auto;
+  width: 16.66%;
+  text-align: start;
+}
+
+#detalle_facturas #cuerpo_factura #importe_total {
+  font-weight: bold;
+  width: 16.66%;
 }
 /*# sourceMappingURL=estilos.css.map */

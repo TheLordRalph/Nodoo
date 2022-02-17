@@ -1,0 +1,93 @@
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    #detalle_facturas {
+        #encabezado_factura {
+            width: 80%;
+            margin: auto;
+            border: #b61042 solid 1px;
+            display: flex;
+            #logotipo {
+                width: 33.33%;
+            }
+            img {
+                padding: 20px;
+            }
+            #datos_factura {
+                width: 66.66%;
+                display: flex;
+                #datos_1,
+                #datos_3 {
+                    width: 20%;
+                    background-color: #b61042;
+                    .detalle_datos {
+                        height: 33.33%;
+                        color: white;
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: 45px;
+                    }
+                }
+                #datos_2,
+                #datos_4 {
+                    width: 30%;
+                    .detalle_datos {
+                        border: #b61042 1px solid;
+                        height: 33.33%;
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: 45px;
+                    }
+                }
+            }
+        }
+        #nav_facturas {
+            margin: auto;
+            width: 80%;
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            color: white;
+            background-color: #b61042;
+            justify-content: space-between;
+            .campos_facturas {
+                margin: auto;
+                width: 16.66%;
+                text-align: center;
+            }
+        }
+        #cuerpo_factura {
+            width: 80%;
+            margin: auto;
+            height: 850px;
+            border: #b61042 1px solid;
+            margin-bottom: 2%;
+            .blanco {
+                padding: 40px;
+                display: flex;
+                justify-content: space-between;
+                .parametro_factura {
+                    margin: auto;
+                    width: 16.66%;
+                    text-align: center;
+                }
+                .parametro_factura_2 {
+                    margin: auto;
+                    width: 16.66%;
+                    text-align: start;
+                }
+            }
+            #importe_total {
+                font-weight: bold;
+                width: 16.66%;
+            }
+        }
+    }

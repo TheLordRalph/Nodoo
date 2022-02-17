@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
 #titulo_seccion {
     background-color: #b61042;
     color: white;
@@ -11,13 +12,15 @@
         margin: auto;
         width: 85%;
         padding: 30px;
+        padding-right: 20px;
         background-color: #b61042;
         display: flex;
-        flex-wrap: wrap;
         color: white;
         justify-content: space-between;
         .campos_facturas {
             margin: auto;
+            width: 16.66%;
+            text-align: center;
         }
     }
     #lista_facturas {
@@ -29,28 +32,43 @@
         overflow-y: scroll;
         .blanco {
             background-color: white;
-            padding: 50px;
+            padding: 40px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .rojo {
-            background-color: #ffdfdf;
-            padding: 50px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            .parametro_factura {
+                margin: auto;
+                width: 16.66%;
+                text-align: center;
+            }
+            .parametro_factura_2 {
+                margin: auto;
+                width: 16.66%;
+                text-align: start;
+            }
+            .parametro_factura_3 {
+                margin: auto;
+                width: 16.66%;
+                text-align: end;
+            }
         }
     }
-}
-
-#parametro_factura {
-    margin: auto;
-    width: 85%;
-    padding: 30px;
-    background-color: #b61042;
-    display: flex;
-    flex-wrap: wrap;
-    color: black;
-    justify-content: space-between;
+    .rojo {
+        background-color: #ffdfdf;
+        padding: 40px;
+        display: flex;
+        .parametro_factura {
+            margin: auto;
+            width: 16.66%;
+            text-align: center;
+        }
+        .parametro_factura_2 {
+            margin: auto;
+            width: 16.66%;
+            text-align: start;
+        }
+        .parametro_factura_3 {
+            margin: auto;
+            width: 16.66%;
+            text-align: end;
+        }
+    }
 }

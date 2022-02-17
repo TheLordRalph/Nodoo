@@ -6,8 +6,6 @@ function Factura(id, empresa, fecha, pago, cantidad, importe) {
     this.cantidad = cantidad;
     this.importe = importe;
 
-
-
     this.mostrar_factura = function() {
 
         //CREACION DIV POR FACTURA
@@ -32,10 +30,12 @@ function Factura(id, empresa, fecha, pago, cantidad, importe) {
 
         //INJECCION DATOS FACTURAS
 
-
-
-
-
+        div_campo_factura_id.textContent = id;
+        div_campo_factura_empresa.textContent = empresa;
+        div_campo_factura_fecha.textContent = fecha;
+        div_campo_factura_pago.textContent = pago;
+        div_campo_factura_cantidad.textContent = cantidad;
+        div_campo_factura_importe.textContent = importe;
 
         div_factura.appendChild(div_campo_factura_id);
         div_factura.appendChild(div_campo_factura_empresa);
@@ -45,6 +45,5 @@ function Factura(id, empresa, fecha, pago, cantidad, importe) {
         div_factura.appendChild(div_campo_factura_importe);
 
         return div_factura;
-
     }
 }
