@@ -259,7 +259,6 @@ function popUp_procesos(section_menus, tipo_pedido) {
     popUp_contenedor.appendChild(popUp_btn_buscar);
 
     popUp_contenedor.appendChild(popUp_div_results);
-    popUp_div_results.appendChild(popUp_div_results_h4);
 
     popUp_contenedor.appendChild(popUp_btn_crearCliente);
 
