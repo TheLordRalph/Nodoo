@@ -58,3 +58,4 @@ window.addEventListener("click", (event) => {
         popUp_productos.setAttribute("class", "popUp_productos");
     }
 });
+}

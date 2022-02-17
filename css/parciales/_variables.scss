@@ -6,9 +6,9 @@ $rojo_corporativo: #b61042;
 }
 
 @mixin estilo_caja_peque {
+    background-color: white;
     border: 5px solid $rojo_corporativo;
     border-radius: 5px;
-    background-color: white;
     font-weight: bold;
 }
 
@@ -23,7 +23,7 @@ $rojo_corporativo: #b61042;
 @mixin caja_filtar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 1%;
     padding: 2%;
     color: white;

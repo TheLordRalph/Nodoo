@@ -1,0 +1,128 @@
+.unselectable {
+    pointer-events: none;
+    background-color: grey;
+    opacity: 50%;
+    #procesos,
+    #pedidos {
+        position: relative;
+    }
+}
+
+.popUp {
+    @include estilo_caja;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 5% auto;
+    background-color: white;
+    width: 30%;
+    height: 100%;
+    overflow-y: scroll;
+    text-align: center;
+    img {
+        right: 20%;
+        padding-top: 5%;
+        margin-left: 86%;
+        width: 7%;
+    }
+    div {
+        @include caja_filtar;
+        justify-content: space-between;
+        input {
+            width: 30%;
+        }
+        &#popUp_titulo {
+            @include estilo_caja_peque;
+            background-color: white;
+            margin: 5%;
+            color: black;
+            justify-content: center;
+        }
+        &#popUp_div_results {
+            text-align: center;
+            justify-content: center;
+            background-color: grey;
+        }
+    }
+    button {
+        @include estilo_caja_peque;
+        padding: 2%;
+        margin: 5% auto;
+    }
+}
+
+section {
+    &#cuerpo_procesos {
+        position: relative;
+    }
+    &#menus_procesos {
+        div {
+            &#titular {
+                @include encabezado_seccion;
+            }
+            &#crear_pedido {
+                @include estilo_caja;
+                width: 70%;
+                margin: 5% auto;
+                h2 {
+                    font-weight: bold;
+                    text-align: center;
+                }
+                div {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    button {
+                        @include estilo_caja_peque;
+                        width: 20%;
+                        padding: 1%;
+                        margin: 1% auto;
+                    }
+                }
+            }
+            &#gestion_pedido {
+                @include estilo_caja;
+                width: 70%;
+                margin: 5% auto;
+                text-align: center;
+                h2 {
+                    font-weight: bold;
+                    text-align: center;
+                }
+                div {
+                    display: flex;
+                    flex-wrap: wrap;
+                    div {
+                        width: 48%;
+                        @include caja_filtar;
+                        input {
+                            width: 20%;
+                        }
+                    }
+                    &#filtro_tipo_pedido {
+                        @include caja_filtar;
+                        margin: 1% auto;
+                        width: 48%;
+                        input {
+                            width: 20%;
+                        }
+                    }
+                    &#results_gestionP {
+                        justify-content: center;
+                        padding: 2%;
+                        background-color: grey;
+                        color: white;
+                    }
+                }
+                button {
+                    @include estilo_caja_peque;
+                    width: 20%;
+                    padding: 1%;
+                    margin: 1% auto;
+                }
+            }
+        }
+    }
+}
