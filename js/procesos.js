@@ -608,13 +608,17 @@ function popUp_pedidos(section_pedidos) {
 
     let section_lista_productos = document.createElement("section");
     section_lista_productos.id = "lista_productos";
+    section_lista_productos.className = "lista_productos_popUp";
     let section_tabla_productos = document.createElement("section");
     section_tabla_productos.id = "tabla_productos";
+    section_tabla_productos.className = "tabla_productos_popUp";
+
     section_caja_tabla.appendChild(section_lista_productos);
     section_caja_tabla.appendChild(section_tabla_productos);
 
     lista_productos();
 
-
+    section_lista_productos.id = "lista_productos_popUp";
+    section_tabla_productos.id = "tabla_productos_popUp";
 
 }

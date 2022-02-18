@@ -44,7 +44,7 @@
     }
 }
 
-#lista_productos {
+.lista_productos {
     display: flex;
     justify-content: space-evenly;
     margin: 0% auto;
@@ -62,7 +62,7 @@
     }
 }
 
-#tabla_productos {
+.tabla_productos {
     margin: 0% auto;
     width: 1200px;
     border: 2px solid $rojo_corporativo;

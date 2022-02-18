@@ -3,6 +3,30 @@
     color: white;
 }
 
+.lista_productos_popUp {
+    background-color: $rojo_corporativo;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+    text-align: center;
+    align-items: center;
+    div {
+        width: 14%;
+    }
+}
+
+.tabla_productos_popUp {
+    padding: 1% 0;
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+        h4 {
+            width: 14%;
+        }
+    }
+}
+
 #div_popUp_pedidos {
     @include estilo_caja;
     position: absolute;
@@ -46,30 +70,6 @@
         &#section_caja_tabla {
             border: solid 1px $rojo_corporativo;
             margin: 2%;
-            section {
-                &#lista_productos {
-                    background-color: $rojo_corporativo;
-                    color: white;
-                    display: flex;
-                    flex-wrap: wrap;
-                    padding: 1%;
-                    text-align: center;
-                    align-items: center;
-                    div {
-                        width: 14%;
-                    }
-                }
-                &#tabla_productos {
-                    padding: 1% 0;
-                    >div {
-                        display: flex;
-                        flex-wrap: wrap;
-                        h4 {
-                            width: 14%;
-                        }
-                    }
-                }
-            }
         }
     }
 }
