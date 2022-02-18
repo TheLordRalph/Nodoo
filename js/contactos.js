@@ -637,7 +637,7 @@ function nuevoProveedor(longitud) {
 
     let arrayEtiquetas = ["Nombre", "Código Proveedor", "CIF", "Dirección", "Correo electrónico", "C.P.", "Télefono", "País", "Número de cuenta", "Cuidad"];
 
-    let arrayPlaceHolder = ["Nombre Proveedor", "0001", "12345678B", "Calle Paloma 5", "ejemplo@gmail.com", "28000", "666123456", "España", "ES12 1234 1234 12 1234567890", "Madrid"];
+    let arrayPlaceHolder = ["Nombre Proveedor", "0001", "B12345678", "Calle Paloma 5", "ejemplo@gmail.com", "28000", "666123456", "España", "ES12 1234 1234 12 1234567890", "Madrid"];
 
 
 

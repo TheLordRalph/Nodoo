@@ -1,0 +1,186 @@
+#titulo_empresa {
+    background-color: #b61042;
+    color: white;
+    text-align: center;
+    margin: 2% 30%;
+    padding: 20px;
+}
+
+.caja {
+    border: 10px solid #b61042;
+    border-radius: 20px;
+    width: 70%;
+    margin: 20px auto;
+    overflow-y: scroll;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 20px 35px;
+}
+
+#insertar {
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#insertar h2 {
+    font-weight: bold;
+    margin: 0px 15px;
+    display: inline-block;
+}
+
+.edicion::placeholder {
+    font-weight: bold;
+    color: #b61042;
+    font-style: normal!important;
+}
+
+.bloque_img {
+    width: 35%;
+}
+
+.bloque_img img {
+    width: 100%;
+}
+
+.bloque_info {
+    width: 65%;
+}
+
+.bloque_info h5 {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.botones {
+    width: 40%;
+    margin-right: 2%;
+    display: inline-block;
+}
+
+.botones input,
+.botones h5 {
+    display: inline-block;
+    margin: 0px 5%;
+    width: 15%;
+}
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(5, 90px);
+    grid-template-areas: 'empresa empresa imagen imagen' 'cif cif imagen imagen' 'correo correo web web' 'direccion direccion cp cp' 'telefono telefono pais pais';
+}
+
+form .div_input:nth-child(1) {
+    grid-area: empresa;
+}
+
+form .div_input:nth-child(2) {
+    grid-area: cif;
+}
+
+form .div_input:nth-child(3) {
+    grid-area: correo;
+}
+
+form .div_input:nth-child(4) {
+    grid-area: web;
+}
+
+form .div_input:nth-child(5) {
+    grid-area: direccion;
+}
+
+form .div_input:nth-child(6) {
+    grid-area: cp;
+}
+
+form .div_input:nth-child(7) {
+    grid-area: telefono;
+}
+
+form .div_input:nth-child(8) {
+    grid-area: pais;
+}
+
+form div input,
+form div label {
+    margin: 2% 0px;
+    display: block;
+}
+
+form div label {
+    font-weight: bold;
+}
+
+form div input {
+    width: 90%;
+    border: 2px solid #b61042;
+}
+
+form div input::placeholder {
+    padding: 3%;
+    font-style: italic;
+}
+
+.div_imagen {
+    grid-area: imagen;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
+}
+
+.div_imagen img {
+    width: 70%;
+}
+
+.div_imagen div {
+    margin: 0px 4% 0px 0px;
+    width: auto;
+    cursor: pointer;
+}
+
+.div_imagen div:hover {
+    color: #b61042;
+}
+
+.div_cambiar {
+    width: 45%;
+    margin: 4% auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.div_cambiar h5 {
+    width: 45%;
+    margin: 0px auto;
+    text-align: center;
+    background-color: #ffdfdf;
+    padding: 2%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.div_cambiar h5:hover {
+    background-color: #b61042;
+    color: white;
+}
+
+.titulos {
+    width: 45%;
+}
+
+.div_respuesta {
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+}

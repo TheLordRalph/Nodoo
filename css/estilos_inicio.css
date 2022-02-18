@@ -55,3 +55,9 @@ button:hover {
     background-color: #720929;
     border: 2px solid white;
 }
+
+#respuesta {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
