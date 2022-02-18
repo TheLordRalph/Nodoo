@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -146,9 +148,9 @@ img {
 }
 
 .caja .crearBuscar input {
+  background-color: white;
   border: 5px solid #b61042;
   border-radius: 5px;
-  background-color: white;
   font-weight: bold;
   width: 14vw;
   padding: 1%;
@@ -180,9 +182,9 @@ img {
 }
 
 .caja .filtro_busqueda_producto_1 input {
+  background-color: white;
   border: 5px solid #b61042;
   border-radius: 5px;
-  background-color: white;
   font-weight: bold;
   width: 14vw;
   padding: 1%;
@@ -259,96 +261,215 @@ img {
   text-align: center;
 }
 
-footer {
-  background-color: black;
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+#detalle_facturas #encabezado_factura {
+  width: 80%;
+  margin: auto;
+  border: #b61042 solid 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#detalle_facturas #encabezado_factura #logotipo {
+  width: 33.33%;
+}
+
+#detalle_facturas #encabezado_factura img {
+  padding: 20px;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura {
+  width: 66.66%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_1,
+#detalle_facturas #encabezado_factura #datos_factura #datos_3 {
+  width: 20%;
+  background-color: #b61042;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_1 .detalle_datos,
+#detalle_facturas #encabezado_factura #datos_factura #datos_3 .detalle_datos {
+  height: 33.33%;
   color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
 }
 
-footer a {
-  text-decoration: none;
+#detalle_facturas #encabezado_factura #datos_factura #datos_2,
+#detalle_facturas #encabezado_factura #datos_factura #datos_4 {
+  width: 30%;
+}
+
+#detalle_facturas #encabezado_factura #datos_factura #datos_2 .detalle_datos,
+#detalle_facturas #encabezado_factura #datos_factura #datos_4 .detalle_datos {
+  border: #b61042 1px solid;
+  height: 33.33%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+}
+
+#detalle_facturas #nav_facturas {
+  margin: auto;
+  width: 80%;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   color: white;
-  cursor: pointer;
+  background-color: #b61042;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-footer a:hover {
-  color: #b61042;
-}
-
-.div_footer #div_img,
-.div_footer #div_politica,
-.div_footer #div_datos,
-.div_footer #div_rrss {
-  width: 90%;
-  margin: 15px auto;
+#detalle_facturas #nav_facturas .campos_facturas {
+  margin: auto;
+  width: 16.66%;
   text-align: center;
 }
 
-#div_rrss svg {
-  margin: 20px;
-  cursor: pointer;
+#detalle_facturas #cuerpo_factura {
+  width: 80%;
+  margin: auto;
+  height: 850px;
+  border: #b61042 1px solid;
+  margin-bottom: 2%;
 }
 
-#div_rrss svg:hover {
-  color: #b61042;
+#detalle_facturas #cuerpo_factura .blanco {
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-@media (min-width: 768px) {
-  .div_footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
+#detalle_facturas #cuerpo_factura .blanco .parametro_factura {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
 }
 
-@media (min-width: 992px) {
-  #div_img {
-    justify-self: flex-start;
-    width: 40% !important;
-    padding: 20px;
-    text-align: left !important;
-  }
-  #div_politica {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 50% !important;
-    margin: 10px auto !important;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  #div_datos {
-    justify-self: flex-end;
-    width: 40% !important;
-    padding: 0px 50px;
-    text-align: left !important;
-  }
-  #div_rrss {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 60% !important;
-    margin: 10px auto;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    padding-right: 50px;
-  }
-  footer ul {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-  }
+#detalle_facturas #cuerpo_factura .blanco .parametro_factura_2 {
+  margin: auto;
+  width: 16.66%;
+  text-align: start;
+}
+
+#detalle_facturas #cuerpo_factura #importe_total {
+  font-weight: bold;
+  width: 16.66%;
+}
+
+#titulo_seccion {
+  background-color: #b61042;
+  color: white;
+  text-align: center;
+  margin: 2% 30%;
+  padding: 20px;
+}
+
+#cuerpo_facturas #nav_facturas {
+  margin: auto;
+  width: 85%;
+  padding: 30px;
+  padding-right: 20px;
+  background-color: #b61042;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#cuerpo_facturas #nav_facturas .campos_facturas {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
+}
+
+#cuerpo_facturas #lista_facturas {
+  width: 85%;
+  margin: auto;
+  height: 850px;
+  margin-bottom: 2%;
+  border: solid #b61042 2px;
+  overflow-y: scroll;
+}
+
+#cuerpo_facturas #lista_facturas .blanco {
+  background-color: white;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#cuerpo_facturas #lista_facturas .blanco .parametro_factura {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
+}
+
+#cuerpo_facturas #lista_facturas .blanco .parametro_factura_2 {
+  margin: auto;
+  width: 16.66%;
+  text-align: start;
+}
+
+#cuerpo_facturas #lista_facturas .blanco .parametro_factura_3 {
+  margin: auto;
+  width: 16.66%;
+  text-align: end;
+}
+
+#cuerpo_facturas .rojo {
+  background-color: #ffdfdf;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#cuerpo_facturas .rojo .parametro_factura {
+  margin: auto;
+  width: 16.66%;
+  text-align: center;
+}
+
+#cuerpo_facturas .rojo .parametro_factura_2 {
+  margin: auto;
+  width: 16.66%;
+  text-align: start;
+}
+
+#cuerpo_facturas .rojo .parametro_factura_3 {
+  margin: auto;
+  width: 16.66%;
+  text-align: end;
 }
 
 .unselectable {
@@ -841,82 +962,95 @@ section#cuerpo_pedidos div#boton_cancelar_pedido button {
   font-weight: bold;
 }
 
-#titulo_seccion {
-  background-color: #b61042;
+footer {
+  background-color: black;
   color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: #b61042;
+}
+
+.div_footer #div_img,
+.div_footer #div_politica,
+.div_footer #div_datos,
+.div_footer #div_rrss {
+  width: 90%;
+  margin: 15px auto;
   text-align: center;
-  margin: 2% 30%;
-  padding: 20px;
 }
 
-#cuerpo_facturas #nav_facturas {
-  margin: auto;
-  width: 85%;
-  padding: 30px;
-  background-color: #b61042;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  color: white;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+#div_rrss svg {
+  margin: 20px;
+  cursor: pointer;
 }
 
-#cuerpo_facturas #nav_facturas .campos_facturas {
-  margin: auto;
+#div_rrss svg:hover {
+  color: #b61042;
 }
 
-#cuerpo_facturas #lista_facturas {
-  width: 85%;
-  margin: auto;
-  height: 850px;
-  margin-bottom: 2%;
-  border: solid #b61042 2px;
-  overflow-y: scroll;
+@media (min-width: 768px) {
+  .div_footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
-#cuerpo_facturas #lista_facturas .blanco {
-  background-color: white;
-  padding: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#cuerpo_facturas #lista_facturas .rojo {
-  background-color: #ffdfdf;
-  padding: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#parametro_factura {
-  margin: auto;
-  width: 85%;
-  padding: 30px;
-  background-color: #b61042;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  color: black;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media (min-width: 992px) {
+  #div_img {
+    justify-self: flex-start;
+    width: 40% !important;
+    padding: 20px;
+    text-align: left !important;
+  }
+  #div_politica {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 50% !important;
+    margin: 10px auto !important;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #div_datos {
+    justify-self: flex-end;
+    width: 40% !important;
+    padding: 0px 50px;
+    text-align: left !important;
+  }
+  #div_rrss {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 60% !important;
+    margin: 10px auto;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 50px;
+  }
+  footer ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=estilos.css.map */
